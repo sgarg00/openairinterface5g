@@ -6,7 +6,7 @@
 # etc.). The hooks in doc/mkdocs/hooks.py collect Markdown pages and generate
 # the navigation from doc/README.md, so pages do not need to be listed here.
 
-site_name: OpenAirInterface 5G
+site_name: OpenAirInterface 5G  # the header shows it next to the Duranta logo
 site_description: Documentation of the Duranta OpenAirInterface 5G project
 repo_url: https://github.com/duranta-project/openairinterface5g
 edit_uri: edit/develop/  # base of the "edit this page" and "view source" links
@@ -15,6 +15,18 @@ site_dir: build/mkdocs-site  # output of "mkdocs build" (ignored by git)
 
 theme:
   name: material
+  custom_dir: doc/mkdocs/overrides  # footer template and stylesheet
+  # White Duranta logo (header and footer are purple), served from the governance repository.
+  logo: https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png
+  favicon: https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Colour-500.png
+  font:
+    text: Inter
+    code: JetBrains Mono
+  # Light scheme only; the colors are set in duranta-theme.css.
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - navigation.tabs  # top-level sections of doc/README.md as tabs
     - navigation.tabs.sticky  # tabs stay visible when scrolling
@@ -32,6 +44,11 @@ theme:
     - content.action.edit  # "edit this page" button (GitHub editor)
     - content.action.view  # "view source of this page" button (raw markdown on GitHub)
 
+extra_css:
+  - assets/stylesheets/duranta-theme.css  # Duranta colors and layout tweaks
+
+extra:
+  generator: false
 hooks:
   - doc/mkdocs/hooks.py  # page collection, navigation, link, etc.
 
