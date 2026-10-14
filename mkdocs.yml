@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: MIT
+#
+# MkDocs configuration for the Duranta OpenAirInterface 5G documentation site.
+#
+# Documentation is distributed across the repository (doc/, radio/, common/,
+# etc.). The hooks in doc/mkdocs/hooks.py collect Markdown pages and generate
+# the navigation from doc/README.md, so pages do not need to be listed here.
+
+site_name: OpenAirInterface 5G
+site_description: Documentation of the Duranta OpenAirInterface 5G project
+repo_url: https://github.com/duranta-project/openairinterface5g
+edit_uri: edit/develop/  # base of the "edit this page" and "view source" links
+docs_dir: doc  # required by MkDocs; hooks.py adds the pages outside doc/
+site_dir: build/mkdocs-site  # output of "mkdocs build" (ignored by git)
+
+theme:
+  name: material
+  features:
+    - navigation.tabs  # top-level sections of doc/README.md as tabs
+    - navigation.tabs.sticky  # tabs stay visible when scrolling
+    - navigation.sections  # sub-sections of a tab as groups in the sidebar
+    - navigation.expand  # all pages of a tab visible, nothing to unfold
+    - navigation.instant  # load pages without a full reload
+    - navigation.instant.progress  # progress bar while a page loads
+    - navigation.tracking  # URL follows the section being read
+    - navigation.top  # "back to top" button
+    - navigation.footer  # previous/next page links
+    - toc.follow  # table of contents follows the section being read
+    - search.suggest  # complete the search term while typing
+    - search.highlight  # highlight the search term on the opened page
+    - content.code.copy  # copy button on code blocks
+    - content.action.edit  # "edit this page" button (GitHub editor)
+    - content.action.view  # "view source of this page" button (raw markdown on GitHub)
+
+hooks:
+  - doc/mkdocs/hooks.py  # page collection, navigation, link, etc.
+
+watch:
+  - doc/mkdocs  # "mkdocs serve" also reloads on hook, template and style changes
+
+markdown_extensions:
+  - admonition  # boxes for GitHub alerts
+  - attr_list  # e.g. {width=1200} after an image (doc/E1AP/E1-design.md)
+  - tables
+  - toc:
+      permalink: true  # link anchor next to each heading
+  - mdx_truly_sane_lists  # 2-space indented sub-lists, as on GitHub
+  - pymdownx.magiclink  # bare URLs become links, as on GitHub
+  - pymdownx.superfences:  # fenced code blocks, and mermaid diagrams
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+validation:
+  nav:
+    omitted_files: ignore  # pages not in the navigation are expected (sub-docs)
+  links:
+    anchors: warn  # broken "page.md#section" links fail "mkdocs build --strict"
