@@ -63,6 +63,9 @@ markdown_extensions:
       permalink: true  # link anchor next to each heading
   - mdx_truly_sane_lists  # 2-space indented sub-lists, as on GitHub
   - pymdownx.magiclink  # bare URLs become links, as on GitHub
+  - pymdownx.emoji:  # emoji shortcodes such as :white_check_mark:, as on GitHub
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences:  # fenced code blocks, and mermaid diagrams
       custom_fences:
         - name: mermaid
