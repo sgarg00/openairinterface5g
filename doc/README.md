@@ -150,3 +150,4 @@ The other SDRs (AW2S, LimeSDR, ...) have no READMEs.
 - [docker-dev-env](../tools/docker-dev-env/README.md) is a ubuntu24 docker development environment
 - [performance monitoring](./dev_tools/performance_monitoring.md): a collection of tools to monitor the computing performance of OAI
 - [doc_best_practices.md](./doc_best_practices.md): overall best practices for writing documentations
+- [Documentation website](./website/README.md): build, preview and validate the documentation website (Zensical)
