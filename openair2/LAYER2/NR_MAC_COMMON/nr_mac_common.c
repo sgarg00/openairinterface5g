@@ -2342,8 +2342,8 @@ uint8_t get_K_ptrs(uint32_t nrb0, uint32_t nrb1, uint32_t N_RB)
 *
 *********************************************************************/
 
-uint16_t get_nr_srs_offset(NR_SRS_PeriodicityAndOffset_t periodicityAndOffset) {
-
+int get_nr_srs_offset(NR_SRS_PeriodicityAndOffset_t periodicityAndOffset)
+{
   switch(periodicityAndOffset.present) {
     case NR_SRS_PeriodicityAndOffset_PR_sl1:
       return periodicityAndOffset.choice.sl1;
@@ -2380,10 +2380,11 @@ uint16_t get_nr_srs_offset(NR_SRS_PeriodicityAndOffset_t periodicityAndOffset) {
     case NR_SRS_PeriodicityAndOffset_PR_sl2560:
       return periodicityAndOffset.choice.sl2560;
     case NR_SRS_PeriodicityAndOffset_PR_NOTHING:
-      LOG_W(NR_MAC,"NR_SRS_PeriodicityAndOffset_PR_NOTHING\n");
-      return 0;
+      LOG_E(NR_MAC,"NR_SRS_PeriodicityAndOffset_PR_NOTHING\n");
+      return -1;
     default:
-      return 0;
+      LOG_E(NR_MAC, "Invalid SRS periodicityAndOffset\n");
+      return -1;
   }
 }
 
@@ -3747,6 +3748,14 @@ void csi_period_offset(const NR_CSI_ReportConfig_t *csirep,
   }
 }
 
+bool is_periodic_occasion(int frame, int slot, int slots_per_frame, int period, int offset)
+{
+  // (slots_per_frame * frame + slot - offset) mod period == 0
+  // Signed arithmetic on purpose: with unsigned frame_t, a negative left operand right after SFN wrap-around
+  // would wrap to 2^32 - d and could give a spurious occasion
+  return (slots_per_frame * frame + slot - offset) % period == 0;
+}
+
 uint8_t get_BG(uint32_t A, uint16_t R)
 {
   float code_rate = (float) R / 10240.0f;
@@ -5064,59 +5073,6 @@ uint16_t nr_get_csi_bitlen(nr_csi_report_t *csi_report)
     csi_bitlen += max_bitlen;
   }
   return csi_bitlen;
-}
-
-bool supported_bw_comparison(int bw_mhz, NR_SupportedBandwidth_t *supported_BW, long *support_90mhz)
-{
-  if (bw_mhz == 90)
-    return support_90mhz ? true : false;
-  switch (supported_BW->present) {
-    case NR_SupportedBandwidth_PR_fr1 :
-      switch (supported_BW->choice.fr1) {
-        case NR_SupportedBandwidth__fr1_mhz5 :
-          return bw_mhz == 5;
-        case NR_SupportedBandwidth__fr1_mhz10 :
-          return bw_mhz == 10;
-        case NR_SupportedBandwidth__fr1_mhz15 :
-          return bw_mhz == 15;
-        case NR_SupportedBandwidth__fr1_mhz20 :
-          return bw_mhz == 20;
-        case NR_SupportedBandwidth__fr1_mhz25 :
-          return bw_mhz == 25;
-        case NR_SupportedBandwidth__fr1_mhz30 :
-          return bw_mhz == 30;
-        case NR_SupportedBandwidth__fr1_mhz40 :
-          return bw_mhz == 40;
-        case NR_SupportedBandwidth__fr1_mhz50 :
-          return bw_mhz == 50;
-        case NR_SupportedBandwidth__fr1_mhz60 :
-          return bw_mhz == 60;
-        case NR_SupportedBandwidth__fr1_mhz80 :
-          return bw_mhz == 80;
-        case NR_SupportedBandwidth__fr1_mhz100 :
-          return bw_mhz == 100;
-        default :
-          AssertFatal(false, "Invalid FR1 supported band\n");
-      }
-      break;
-    case NR_SupportedBandwidth_PR_fr2 :
-      switch (supported_BW->choice.fr2) {
-        case NR_SupportedBandwidth__fr2_mhz50 :
-          return bw_mhz == 50;
-        case NR_SupportedBandwidth__fr2_mhz100 :
-          return bw_mhz == 100;
-        case NR_SupportedBandwidth__fr2_mhz200 :
-          return bw_mhz == 200;
-        case NR_SupportedBandwidth__fr2_mhz400 :
-          return bw_mhz == 400;
-        default :
-          AssertFatal(false, "Invalid FR2 supported band\n");
-      }
-      break;
-    default :
-      AssertFatal(false, "Invalid BW type\n");
-  }
-  return false;
 }
 
 uint32_t compute_PDU_length(uint32_t num_TLV, uint32_t total_length)
