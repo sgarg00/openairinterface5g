@@ -113,20 +113,6 @@ jobs:
 
           exit 1
 
-  docs-website:
-    needs: check-labels
-    if: |
-      always() && (
-        github.event_name == 'push' ||
-        needs.check-labels.result == 'success'
-      )
-
-    permissions:
-      checks: write
-      contents: write
-
-    uses: ./.github/workflows/docs-website.yml
-
   detect-changes:
     needs: check-labels
     runs-on: ubuntu-24.04
@@ -161,6 +147,16 @@ jobs:
               - 'openshift/**'
               - 'cmake_targets/build_oai'
               - 'cmake_targets/tools/build_helper'
+
+  docs-website:
+    needs: detect-changes
+    if: always() && needs.detect-changes.result == 'success'
+
+    permissions:
+      checks: write
+      contents: write
+
+    uses: ./.github/workflows/docs-website.yml
 
   require-maintainer-approval:
     needs: detect-changes
