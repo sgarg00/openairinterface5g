@@ -3,10 +3,10 @@ name: Duranta Jenkins Dispatch
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, labeled]
-    branches: [develop]
+    branches: [mkdocs-docs-zensical]
   push:
     branches:
-      - develop
+      - mkdocs-docs-zensical
 
 concurrency:
   group: ${{ github.event_name }}-${{ github.event.action }}-${{ github.event.pull_request.number || github.ref }}
