@@ -100,7 +100,7 @@ jobs:
         run: |
           URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-$PR/"
           gh api "repos/${{ github.repository }}/check-runs" \
-            -f name="Docs preview" -f head_sha="${{ github.event.pull_request.head.sha }}" \
+            -f name="docs-website / preview-site" -f head_sha="${{ github.event.pull_request.head.sha }}" \
             -f status=completed -f conclusion=success -f details_url="$URL" \
             -f "output[title]=Preview ready" -f "output[summary]=**Preview:** $URL" > /dev/null
-          echo "**Docs preview:** $URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Preview:** $URL" >> "$GITHUB_STEP_SUMMARY"
