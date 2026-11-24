@@ -122,8 +122,8 @@ jobs:
       )
 
     permissions:
+      checks: write
       contents: write
-      statuses: write
 
     uses: ./.github/workflows/docs-website.yml
 
