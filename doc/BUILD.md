@@ -2,7 +2,7 @@
 
 # OAI Build Procedures
 
-This page describes how to build OAI.
+This page describes how to build Openairinterface
 
 [[_TOC_]]
 
@@ -260,3 +260,5 @@ Some libraries have further dependencies and might not build on every system:
 
 If you want to use cross-compiler on x86 platform for aarch64 version, please refer the [cross-compile.md](./cross-compile.md) for more information.
 
+Docs preview test.
+Second update.
