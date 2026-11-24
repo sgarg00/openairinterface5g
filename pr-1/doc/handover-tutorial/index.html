@@ -1,0 +1,5781 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of the Duranta openairinterface5g project">
+      
+      
+      
+      
+      
+        <link rel="prev" href="../ntn-configuration/">
+      
+      
+        <link rel="next" href="../nr-dc/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Colour-500.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>Handover - openairinterface5g</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.0006804e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.813d4b3f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/duranta-theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="openairinterface5g" class="md-header__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openairinterface5g
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Handover
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  General
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../NR_SA_Tutorial_OAI_CN5G/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../SW_archi/" class="md-tabs__link">
+          
+  
+  Designs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docker/" class="md-tabs__link">
+          
+  
+  Container Images
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/utils/T/DOC/T/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UnitTests/" class="md-tabs__link">
+          
+  
+  Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AGENTS/" class="md-tabs__link">
+          
+  
+  Developer tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="openairinterface5g" class="md-nav__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    openairinterface5g
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FEATURE_SET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Feature set
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supported_Hardware_Operating_System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Supported hardware and operating systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Key performance indicators
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GET_SOURCES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting the sources
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BUILD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building OAI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Packages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tuning_and_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tuning and security
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Roadmap
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Changelog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started with 5G
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Getting started with 5G
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_CN5G/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI 5G core network
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI gNB with a COTS UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_nrUE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_multi_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple OAI NR-UEs with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running OAI
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Running OAI
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RUNMODEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runmodem-nrue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAC/mac-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB MAC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RRC/rrc-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RRC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gNB_frequency_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Setting the gNB frequency
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TESTING_OAI_NSA_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G NSA setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ntn-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTN setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Handover
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Handover
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#considered-setup-for-f1-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Considered setup for F1 handover
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-gnb-neighbor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What is a gNB neighbor?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-run-f1-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run F1 handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to run F1 handover with OAI UE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-with-telnet-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build with telnet support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information-to-the-manual-ho-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Additional information to the manual HO trigger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-run-f1-handover-with-cots-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run F1 handover with COTS UE
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to run F1 handover with COTS UE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-neighbour-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example neighbour configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handovers-triggers-and-ntn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Handovers triggers and NTN
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handovers triggers and NTN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        NTN
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-locationtime-based-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simple location/time-based trigger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n2-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        N2 Handover
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="N2 Handover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-n2-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run N2 handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbour-list-and-measurement-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Neighbour list and measurement configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xn-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Xn Handover
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xn Handover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xn-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Xn configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-xn-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run Xn handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1-based NR-DC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RUN_NR_PRS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Positioning reference signal (PRS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/E2AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E2 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/E3AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E3 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-sidelink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sidelink
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Functional splits
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Functional splits
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1AP/F1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E1AP/E1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORAN_FHI7.2_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORAN_FHI7.2_ORU_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fronthaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Native 7.2x fronthaul library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nfapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI-VNF and OAI-PNF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_NFAPI_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nFAPI internals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aerial_FAPI_Split_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NVIDIA Aerial and Foxconn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hardware acceleration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Hardware acceleration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LDPC_OFFLOAD_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC accelerators (AMD/Xilinx T2, Intel ACCs, ORS Aurora)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_nrUE_GPU_offload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NR-UE with the GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/CODING/nrLDPC_coding/nrLDPC_coding_cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/SIMULATION/TOOLS/DOC/gpu_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU-accelerated channel simulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Simulators
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Simulators
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physical-simulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/SIMULATION/TOOLS/DOC/channel_simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Channel simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UE_Positioning_in_DigitalTwin_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE positioning in a digital twin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Legacy
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Legacy
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI_NOS1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator without S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI_S1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator with S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L1SIM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G L1 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d2d_emulator_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G device-to-device (D2D) emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Designs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Designs
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Software architecture
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-archi-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 flow graph in the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-ue-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 threads in the NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1AP/F1AP-lib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1AP message library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GTP/gtp-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GTP-U design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XnAP/Xn-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Xn design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NRPPA/NRPPA-call-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NRPPa call flow
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5Gnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE 5G NAS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beamforming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Beamforming
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rach_processing_in_gNB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RACH processing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UL_MIMO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UL MIMO
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Container Images
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Container Images
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/5g_rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/4g_rfsimulator_fdd_05MHz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/sa_fhi_7.2_vvdn_gnb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 with a VVDN O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openshift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators in OpenShift
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/T/DOC/T/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  T tracer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/config/DOC/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/LOG/DOC/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/DOC/loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared object loader
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/threadPool/thread-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Thread pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/actor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Actor utility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/ocp_itti/itti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inter-task interface (ITTI)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/CODING/DOC/LDPCImplementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC implementation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Time management
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Radios
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Radios
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/USRP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  USRP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/BLADERF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BladeRF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/iqplayer/DOC/iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q player
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q record and replay
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/fhi_72/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul driver (fhi_72)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/ETHERNET/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ethernet fronthaul drivers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/vrtsim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vrtsim
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/emulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RF emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/zmq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ZeroMQ (zmq)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Special-purpose libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Special-purpose libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/TOOLS/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scopes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/telnetsrv/DOC/telnethelp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Telnet server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/websrv/DOC/websrv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RT data recording app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Testing
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Testing
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UnitTests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Unit tests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TESTBenches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test benches
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CI framework
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Component tests (in tests/)
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Component tests (in tests/)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-cuup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-UP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-cu-nrppa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-NRPPa tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-ue-nas-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE NAS tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/XNAP/tests/xn-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  XNAP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer tools
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Developer tools
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Repository agent guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution requirements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-style-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-compile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cross-compilation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clang-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  clang-format
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Formatting check
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cppcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  cppcheck
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_tools/sanitizers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sanitizers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/iwyu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  include-what-you-use (iwyu)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/docker-dev-env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Docker development environment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plotting tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_tools/performance_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Performance monitoring
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc_best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation best practices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#considered-setup-for-f1-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Considered setup for F1 handover
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-gnb-neighbor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What is a gNB neighbor?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-run-f1-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run F1 handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to run F1 handover with OAI UE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-with-telnet-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build with telnet support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information-to-the-manual-ho-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Additional information to the manual HO trigger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-run-f1-handover-with-cots-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run F1 handover with COTS UE
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to run F1 handover with COTS UE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-neighbour-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example neighbour configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handovers-triggers-and-ntn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Handovers triggers and NTN
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handovers triggers and NTN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        NTN
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-locationtime-based-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simple location/time-based trigger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n2-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        N2 Handover
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="N2 Handover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-n2-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run N2 handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbour-list-and-measurement-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Neighbour list and measurement configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xn-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Xn Handover
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xn Handover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run the setup
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xn-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Xn configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-xn-handover-with-oai-ue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Steps to run Xn handover with OAI UE
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/duranta-project/openairinterface5g/edit/develop/doc/handover-tutorial.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/duranta-project/openairinterface5g/raw/develop/doc/handover-tutorial.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
+<h1 id="handover-tutorial-for-oai">Handover Tutorial for OAI<a class="headerlink" href="#handover-tutorial-for-oai" title="Permanent link">&para;</a></h1>
+<p>This tutorial explains how to perform handovers. It covers F1 handovers
+(intra-gNB, within a single gNB between DUs), N2 handovers (inter-gNB, via the
+AMF) and Xn handovers (inter-gNB, directly between gNBs).</p>
+<p>This document assumes familiarity with the F1 split architecture and basic
+OAI knowledge. Please refer to the prerequisite documentation listed below:</p>
+<ul>
+<li>To run the <a href=".././NR_SA_Tutorial_OAI_CN5G/">Core Network</a></li>
+<li>To run <a href=".././NR_SA_Tutorial_COTS_UE/">OAI full stack with COTS UE</a></li>
+<li><a href=".././F1AP/F1-design/">F1 split design document</a>
+for details on the F1 architecture and the networking relationships between
+the CU and the associated DUs.</li>
+<li><a href=".././XnAP/Xn-design/">Xn design document</a> for Xn handover (inter-gNB, prepared
+  over Xn)</li>
+</ul>
+<h2 id="considered-setup-for-f1-handover">Considered setup for F1 handover<a class="headerlink" href="#considered-setup-for-f1-handover" title="Permanent link">&para;</a></h2>
+<p>We consider one CU and two DUs, connected over F1. The UE is initially
+connected over the radio interface ("Uu") to DU0. Via movement to a new
+position ("new pos"), it will trigger an event such that the CU triggers a
+handover of the UE from DU0 to DU1. Alternatively, a manual trigger can do the
+same.</p>
+<p><img alt="F1 Handover setup" src=".././RRC/ho.png" /></p>
+<h2 id="what-is-a-gnb-neighbor">What is a gNB neighbor?<a class="headerlink" href="#what-is-a-gnb-neighbor" title="Permanent link">&para;</a></h2>
+<p>Network continuity is a key aspect of 5G. In the 5G architecture, gNB neighbours
+play a central role in maintaining service continuity through mechanisms such
+as handover and load balancing. By definition, a gNB neighbour is another gNB
+that can be measured and linked by the UE. If the current serving gNB is no
+longer optimal, the UE may connect to a neighbour gNB.</p>
+<p>To support this behavior, the network configuration specifies additional frequencies
+and cells that the UE should measure. The UE reports these measurements to the
+network, which then decides whether or not to initiate a handover.</p>
+<p>Neighbour types include:
+- <strong>Intra-gNB neighbours</strong> - cells belonging to the same gNB
+- <strong>Inter-gNB neighbours</strong> - cells belonging to different gNBs
+- <strong>Inter-RAT neighbours</strong> - cells belonging to another RAT (e.g., LTE)</p>
+<h2 id="steps-to-run-f1-handover-with-oai-ue">Steps to run F1 handover with OAI UE<a class="headerlink" href="#steps-to-run-f1-handover-with-oai-ue" title="Permanent link">&para;</a></h2>
+<p>Measurement reporting and processing of RRC Reconfiguration for Mobility are
+not completed at the UE. Nevertheless, it is possible to make simple handover
+tests without any radio setup, on a single PC, with the OAI UE, in RFsimulator.</p>
+<h3 id="build-with-telnet-support">Build with telnet support<a class="headerlink" href="#build-with-telnet-support" title="Permanent link">&para;</a></h3>
+<p>Since the UE does not support any measurement reporting, it cannot trigger a
+handover on its own; it has to be triggered manually through telnet. Thus,
+build both gNB and UE as well as activate the build of telnet to that purpose:</p>
+<pre><code>./build_oai --ninja --nrUE --gNB --build-lib telnetsrv
+</code></pre>
+<h3 id="run-the-setup">Run the setup<a class="headerlink" href="#run-the-setup" title="Permanent link">&para;</a></h3>
+<p>We will use the TDD configuration files in the repository for the
+<a href="https://github.com/duranta-project/openairinterface5g/blob/develop/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-cu.sa.f1.conf">CU</a> as well for
+<a href="https://github.com/duranta-project/openairinterface5g/blob/develop/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-du.sa.band78.106prb.rfsim.pci0.conf">DU0</a>
+and
+<a href="https://github.com/duranta-project/openairinterface5g/blob/develop/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-du.sa.band78.106prb.rfsim.pci1.conf">DU1</a>.
+Note how the DUs differ in their DU ID (for identification at the CU), nr
+cellid (global identification), physical cell ID (identification through UE),
+frequency (limitation at OAI UE), and IP address.</p>
+<p>Make sure that using RFsimulator and the CU and each DU, you can achieve a full
+connection of the UE (independently, i.e., running one DU a time). Once this is
+done, follow below steps to trigger a handover:</p>
+<p>Start the CU including telnet support:</p>
+<pre><code>sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-cu.sa.f1.conf --telnetsrv --telnetsrv.shrmod ci --telnetsrv.listenaddr 127.0.0.2
+</code></pre>
+<p>Start DU0:</p>
+<pre><code>sudo ./nr-softmodem --rfsim -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-du.sa.band78.106prb.rfsim.pci0.conf --rfsimulator.[0].serveraddr 127.0.0.1
+</code></pre>
+<p>This will show an error <code>[HW]   connect() to 127.0.0.1:4043 failed,
+errno(111)</code>. <em>This is expected</em>, because the RFsim server is at the UE (to be
+able to serve two RFsim clients, one DU each; see below for more info). Proceed
+by starting the UE, and let it connect completely (this should make the error
+go away):</p>
+<pre><code>sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --uicc0.imsi 001010000000001 -O ../../../ci-scripts/conf_files/nrue.uicc.conf --rfsimulator.[0].serveraddr server
+</code></pre>
+<p>Note how the RFsimulator roles have been switched, and RFsim server is at the
+UE side; <em>this is important</em>. Replace <code>&lt;config&gt;</code> with the UE configuration
+matching your core. If you followed the CN and oaiUE tutorials, you can remove
+<code>-O &lt;config&gt;</code> and replace it with <code>--uicc0.imsi 001010000000001</code>.</p>
+<p>Once the UE is connected, start DU1:</p>
+<pre><code>sudo ./nr-softmodem --rfsim -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb-du.sa.band78.106prb.rfsim.pci1.conf --rfsimulator.[0].serveraddr 127.0.0.1
+</code></pre>
+<p>Once DU1 is online, you can trigger a handover by issuing this command</p>
+<pre><code>echo ci trigger_f1_ho | nc 127.0.0.2 9090 &amp;&amp; echo
+</code></pre>
+<p>Alternatively, you can trigger a handover using a xApp. First, recompile RAN
+with <code>E2_AGENT</code> enabled, and <a href="../../openair2/E2AP/#22-flexric">build FlexRIC</a>. Rerun the RAN nodes, start nearRT-RIC and xApp:
+<div class="highlight"><pre><span></span><code>./build/examples/ric/nearRT-RIC
+./build/examples/xApp/c/rc_handover/xapp_rc_handover
+</code></pre></div></p>
+<p>You should see how the UE switches from one DU to another. See additional
+information further below.</p>
+<p>A number of remarks:</p>
+<ol>
+<li>DU0 and DU1 should use different SSBs, i.e., make sure that
+   <code>ssb_PositionsInBurst_Bitmap</code> is set to send SSB in different slots in the
+   configurataion files of DU0 (e.g., set to 1) and DU1 (e.g., set to 2).</li>
+<li>It is important that you start DU0, UE, DU1 in order, and having UE connect
+   to DU0 before starting DU1. This is because we don't employ any channel
+   emulation, and the UE could not decode the SIB1 of DU0 to connect.</li>
+<li>The RFsimulator roles are switched. Typically, the gNB RFsim acts as the
+   server and the UE as a client. However, RFsim is limited to one server with
+   multiple clients. Since the UE should be able to connect to both DUs, it has
+   to act as the server, and both DUs are a client.</li>
+<li>If you see errors <code>could not open a socket</code> and/or <code>Could not start the RF
+   device</code>, this means that RFsim could not be started. Handover will not work;
+   please refer to the preceding point to fix this (i.e., run the UE as the
+   RFsim server).</li>
+<li>In some cases, if the RFsim server is at the UE, the whole system can block;
+   in this case, stop UE and all DUs and restart (the CU can keep running).</li>
+</ol>
+<h3 id="additional-information-to-the-manual-ho-trigger">Additional information to the manual HO trigger<a class="headerlink" href="#additional-information-to-the-manual-ho-trigger" title="Permanent link">&para;</a></h3>
+<p>You can trigger the handover manually by logging in through telnet:</p>
+<pre><code>telnet 127.0.0.1 9090
+</code></pre>
+<p>and then manually typing <code>ci trigger_f1_ho</code>.</p>
+<p>The command using <code>nc</code> (<code>netcat</code>) above triggers handovers directly from bash.
+It does the same as logging in through telnet otherwise, and is a shorthand.</p>
+<p>The full command is</p>
+<pre><code>ci trigger_f1_ho [cu-ue-id]
+</code></pre>
+<p><code>cu-ue-id</code> is optional. If only one UE context is present in the RRC, it will
+trigger the handover for this UE in a round-robin fashion across all DUs. If
+there is only one DU, the handover request will be rejected. Similarly, if
+there are multiple UE contexts present at RRC, the handover will be rejected,
+and you have to manually type the CU UE ID. You can see a list of all UEs in
+the file <code>nrRRC_stats.log</code> that is printed periodically in the working
+directory of the CU.</p>
+<h2 id="steps-to-run-f1-handover-with-cots-ue">Steps to run F1 handover with COTS UE<a class="headerlink" href="#steps-to-run-f1-handover-with-cots-ue" title="Permanent link">&para;</a></h2>
+<p>You can do handover across DUs with a COTS UE. Note that these DUs should be
+separated by at least multiple meters to ensure that the UE will receive
+different signal strengths when moving between cells.
+In the CI setup we use a digital 4 channel attenuator that allows us to "control"
+the transmitted signal from both RUs. This allows us to create a setup in
+which the UE thinks it's changing positions between 2 cells, but in reality
+it's not moving.</p>
+<p>We support both intra-frequency and inter-frequency handovers. We have verified
+with USRPs only, although other radios should work as well.</p>
+<p>For UEs, we verified Quectel modules, iPhones and Samsung S23 Ultra. Note,
+though, that not all phones might work; for instance, we did not achieve
+handovers with a OnePlus Nord, yet.</p>
+<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
+<p>First, make sure that you can run both DUs with the CU independently.
+Use the same radio hardware for both radios to ensure that both cells can be
+received equally good by the UE.</p>
+<p>In order to enable handovers (triggered by the UE), you have to configure the
+neighbour relation of the DUs at the CU. To do so, proceed as follows:</p>
+<ol>
+<li>To simplify filling the right values in the neighbour configuration, you can
+   rely on the information the CU has about both DUs. Start the CU and both
+   DUs. Navigate to the directory from which you started the CU, and print RRC
+   statistics:
+   <div class="highlight"><pre><span></span><code>cat nrRRC_stats.log
+</code></pre></div></li>
+<li>Fill in the <a href="https://github.com/duranta-project/openairinterface5g/blob/develop/ci-scripts/conf_files/neighbour-config.conf"><code>neighbour-config.conf</code></a>
+   configuration file as shown below, and <code>@include</code> it in the CU file.</li>
+<li>
+<p>Start the CU and both DUs. If you are using an attenuator, make sure that
+   the signal on one DU is stronger than the other.</p>
+</li>
+<li>
+<p>Bring the phone close to one cell, and leave flight mode. It should connect
+   to the DU to which it is closer/stronger signal.</p>
+</li>
+<li>Move the UE towards the other DU; it should trigger an "A3 event" (Neighbour
+   Becomes Better than Serving), and the CU will trigger the handover to the
+   other DU.</li>
+</ol>
+<p>The output on the terminal should be the same as with RFsim. If no handover is
+triggered:</p>
+<ul>
+<li>Make sure that both DUs use the same hardware. In case of USRPs, make sure that
+  they are synched:<ul>
+<li>By connecting them to a GPS or an Octoclock to provide a common time and clock
+  reference.</li>
+<li>By synchronizing the RU hosts.</li>
+<li>By using Openairinterface starting tag <a href="https://github.com/duranta-project/openairinterface5g/releases/tag/2025.w42">2025.w42</a>
+  (A fix was added to force the USRP to "use" the time/clock provided by the
+  external source instead to its own master clock.).</li>
+</ul>
+</li>
+<li>Make sure that the UE sees both cells. For instance, you can switch to flight
+  mode, go closer to the other DU, and switch off flight mode -- the UE should
+  connect to that second DU.</li>
+<li>We did not manage handover with every phone yet -- make sure you use one of
+  the list provided above.</li>
+</ul>
+<p>You can also force a handover through telnet as described above. (In fact, the
+decision about a handover is always at the network-side, the UE only "assists"
+through measurements telling the CU that one DU is stronger than others.
+Hence, "forcing" a handover just means that you manually trigger the handover,
+instead of waiting for UE measurement report.)</p>
+<p>Our CI setup consists of:
+- 2 USRPs B210 that are synchronized by connecting them to an Octoclock over
+  10MHz refrence and a PPS signal. The RU hosts are synchronized via NTP.
+- Mini-Circuits RC4DAT-6G-60 programmable attenuator. To control the digital
+  attenuator, a Python script was developed <code>ci-scripts/attenuatorctl.py</code>.
+- Quectel RM520 as a UE.
+- The setup is run using Docker <code>ci-scripts/yaml_files/5g_sa_f1_b210_ho</code>.</p>
+<p>To run the setup using Docker:
+- We consider 2 synchronized servers. One for each DU.</p>
+<h3 id="example-neighbour-configuration">Example neighbour configuration<a class="headerlink" href="#example-neighbour-configuration" title="Permanent link">&para;</a></h3>
+<p>Below is an example neighbour configuration. It is based on this DU information
+gathered from <code>nrRRC_stats.log</code> at the CU:</p>
+<div class="highlight"><pre><span></span><code>[1] DU ID 3585 (gNB-in-docker) assoc_id 4161: nrCellID 11111111, PCI 1, SSB ARFCN 643296
+    TDD: band 78 ARFCN 642024 SCS 30 (kHz) PRB 106
+[2] DU ID 3584 (gNB-in-docker) assoc_id 4163: nrCellID 12345678, PCI 0, SSB ARFCN 643296
+    TDD: band 78 ARFCN 642024 SCS 30 (kHz) PRB 106
+</code></pre></div>
+<p>Note how both DUs have one cell on the same frequency and the same radio
+configuration.  From this, fill the neighbour list as shown below.</p>
+<p>Concretely, the first cell is <code>12345678</code> (on DU <code>[2]</code>), and it has <code>11111111</code>
+(on DU <code>[1]</code>) as its neighbour; hence in the first block, you fill
+<code>physical_cellId</code> and other values for DU <code>[1]</code>, and vice versa.</p>
+<p>The below configuration further enables periodic measurements, A2 event
+("Serving becomes worse than threshold"), and A3 events ("Neighbour Becomes
+Better than Serving").
+The A2 event can be disabled by setting <code>enable = 0</code>.
+The A3 event cannot be disabled as of now. It can be made
+specific to cells or set to <code>physCellId = -1</code> which means "any cell".</p>
+<p><code>hysteresis</code> is a margin added to the serving cell measurements to
+prevent unnecessary or frequent handovers. It ensures that the neighbouring
+cell must show sufficiently better signal quality before a handover is
+triggered. It is an integer between 0 and 30.</p>
+<p><code>time_to_trigger</code> the time during which specific criteria for the event
+needs to be met in order to trigger a measurement report. It is an enumerated
+parameter and in the configuration below it is set to 1 which corresponds to
+<code>ms40</code> or 40 milliseconds.</p>
+<p><em>Note</em>: For more information please refer to 3GPP TS 38.331 specifications.
+<div class="highlight"><pre><span></span><code>############################################################
+#  gNB-to-gNB neighbour list + measurement configuration   #
+#  for the 2-cell rfsim setup (gNB_ID 0xe00 &amp; 0xb00)       #
+############################################################
+
+neighbour_list = (
+  ##########################################################
+  #  Entry USED BY gNB_ID = 0xe00  (nr_cellid = 12345678L) #
+  ##########################################################
+  {
+    nr_cellid = 12345678;                 #  Serving cell of gNB 0xe00
+    neighbour_cell_configuration = (
+      {
+        gNB_ID               = 0xe01;
+        nr_cellid            = 11111111;    #  Cell served by gNB 0xe01
+        physical_cellId      = 1;
+        absoluteFrequencySSB = 643296;
+        subcarrierSpacing    = 1;           # 30 kHz
+        band                 = 77;
+        plmn                 = { mcc = 001; mnc = 01; mnc_length = 2 };
+        tracking_area_code   = 1;
+      }
+    );
+  },
+
+  ##########################################################
+  #  Entry USED BY gNB_ID = 0xe01  (nr_cellid = 11111111)  #
+  ##########################################################
+  {
+    nr_cellid = 11111111;                   #  Serving cell of gNB 0xe01
+    neighbour_cell_configuration = (
+      {
+        gNB_ID               = 0xe00;
+        nr_cellid            = 12345678L;   #  Cell served by gNB 0xe00
+        physical_cellId      = 0;
+        absoluteFrequencySSB = 643296;
+        subcarrierSpacing    = 1;           # 30 kHz
+        band                 = 77;
+        plmn                 = { mcc = 001; mnc = 01; mnc_length = 2 };
+        tracking_area_code   = 1;
+      }
+    );
+  }
+);
+
+############################################################
+#  Common NR measurement-event configuration               #
+############################################################
+
+nr_measurement_configuration = {
+  Periodical = {
+    enable                     = 1;
+    includeBeamMeasurements    = 1;
+    maxNrofRS_IndexesToReport  = 4;
+  };
+
+  A2 = {
+    enable          = 1;
+    threshold       = 60;
+    time_to_trigger = 1;
+  };
+
+  A3 = (
+    {
+      physCellId      = -1;
+      offset          = 10;
+      hysteresis      = 0;
+      time_to_trigger = 1;
+    }
+  )
+};
+</code></pre></div></p>
+<p><code>@include</code> this configuration file inside the gNB section of CU file as shown
+below.</p>
+<div class="highlight"><pre><span></span><code>    plmn_list = ({ mcc = 001; mnc = 01; mnc_length = 2; snssaiList = ({ sst = 1, sd = 0xffffff })});
+
+
+    @include "neighbour-config.conf"
+</code></pre></div>
+<h2 id="handovers-triggers-and-ntn">Handovers triggers and NTN<a class="headerlink" href="#handovers-triggers-and-ntn" title="Permanent link">&para;</a></h2>
+<p>Typically, in terrestrial networks, channel measurements as well as criteria
+such as load in base stations, is used to determine when and where to handover
+a UE.</p>
+<h3 id="ntn">NTN<a class="headerlink" href="#ntn" title="Permanent link">&para;</a></h3>
+<p>Doppler spreading and time selectivity of the channel are already a challenge
+for conventional terrestrial networks. However, in the context of
+non-terrestrial networks (NTN), and low-earth orbit (LEO) systems, the
+satellites can have speeds up 7.56 km/s, which is much faster than 0.14 km/s of
+a high-speed train in terrestrial networks. Also, the delays in LEO are more varied
+and longer, and the path loss is larger, because the communication distances is up
+to 10 times longer than in terrestrial networks. Moreover, downlink in LEO
+presents a high interference from adjacent satellite beams, and all these
+features contribute to reduced received signal strength variation in these
+networks compared to terrestrial networks. Typically, the criteria used in
+algorithms presented in conventional terrestrial networks to trigger a handover
+from a gNB to another one is based on signal strength measurements (cf., A3
+event above). However, the reduced received signal strength variation in NTNs
+make these algorithms inefficient for LEO systems.  Therefore, algorithms with
+criteria for handover triggering that address the specifics of LEO systems are
+crucial for an efficient handover processing that ensures a robust
+communication with low dropping probability. Some criteria for handovers in NTN
+are as follows:</p>
+<ul>
+<li><strong>Measurement-based triggering</strong>: This method is based on signal strength
+  measurement, and as stated above, it may not be efficient. The triggering
+  thresholds and which measurement events to use as triggers, as reference
+  signal received power (RSRP), reference signal received quality (RSRQ), or
+  received signal strength indicator (RSSI), should be configured. This method
+  relies on UE estimates and established channel estimation techniques, however
+  it would require neighbouring cell lists which can be hard because the
+  fast-moving of satellites leads to a fast cell coverage deviation.</li>
+</ul>
+<ul>
+<li><strong>Location-based triggering</strong>: This method is based on UE and satellite
+  location, which can be applied jointly (or not) with another trigger as the
+  measurement-based trigger. For instance, for a deterministic satellite
+  movement, it is possible to predict the configure triggering condition, and
+  the initial association of the UE can be performed based on the distance with
+  the nearest satellite, because we can know the location of the UE and NTN
+  satellite to compute the distance.</li>
+</ul>
+<ul>
+<li><strong>Elevation angles of source and target cells based triggering</strong>: This method
+  is similar to the previous one, but it is based on the largest elevation
+  angle.</li>
+</ul>
+<ul>
+<li><strong>Time/timer-based triggering</strong>: This method uses triggering conditions based
+  on UTC time or a timer-based solution, which can also be applied jointly (or
+  not) with another trigger as the measurement-based trigger. The timer-based
+  handover trigger considers the deterministic satellite movement to predict
+  the time duration for which the satellite's footprint covers a certain zone.</li>
+</ul>
+<ul>
+<li><strong>Timing advance value-based triggering</strong>: This method uses the timing
+  advance value (independently or jointly with another trigger) to trigger a
+  handover to the target cell. It is appropriate to overcome the Random-Access
+  preamble reception issue, where the UE needs to pre-compensate the instant
+  which sends the preamble. However, UEs with GNSS support are required to
+  perform this method.</li>
+</ul>
+<h3 id="simple-locationtime-based-trigger">Simple location/time-based trigger<a class="headerlink" href="#simple-locationtime-based-trigger" title="Permanent link">&para;</a></h3>
+<p>A location-based handover trigger, somewhat aligned with 3GPP Rel.17, taking
+advantage of deterministic satellite movement, can be implemented whereby it is
+assumed that the locations of the UE and the NTN satellite are known. From a
+practical point of view, this means that we know how long it takes to perform
+the handover, and therefore we only need to implement a timer.</p>
+<p>It is possible to modify the source code to trigger a time-based handover, or
+combine with other methods. If all what is required is a trigger every 15
+seconds, you can also resort to the telnet-based handover trigger above, and
+run in a terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>ci<span class="w"> </span>trigger_f1_ho<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>-N<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">9090</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span>
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">15</span>
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="n2-handover">N2 Handover<a class="headerlink" href="#n2-handover" title="Permanent link">&para;</a></h2>
+<h3 id="run-the-setup_1">Run the setup<a class="headerlink" href="#run-the-setup_1" title="Permanent link">&para;</a></h3>
+<p>An N2 handover involves the transfer of a UE from one gNB to another via the
+5G core network. Unlike F1 handover, where the CU handles the process internally
+between its DUs, N2 handover requires signaling through the AMF, making it
+a core-network-based handover.</p>
+<p>We assume:</p>
+<ul>
+<li><code>ssb_PositionsInBurst_Bitmap</code> set to different values for gNB-PCI0 and
+  gNB-PCI1 as described further above.</li>
+<li>Two independent gNBs connected to the same 5GC via N2 interface.</li>
+<li>A UE initially connected to gNB-PCI0, which will be handed over to gNB-PCI1.</li>
+<li>Handover is triggered by either a decision based measurement event (e.g. A3)
+or telnet command.</li>
+</ul>
+<h3 id="steps-to-run-n2-handover-with-oai-ue">Steps to run N2 handover with OAI UE<a class="headerlink" href="#steps-to-run-n2-handover-with-oai-ue" title="Permanent link">&para;</a></h3>
+<p><strong>Note for same-machine setup:</strong> When running both gNBs on the same machine,
+you need to assign a unique IP address to the second gNB to avoid network
+conflicts. For example:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.71.180/24<span class="w"> </span>dev<span class="w"> </span>rfsim5g-public
+</code></pre></div>
+<ol>
+<li>Similarly to F1 handover, UE does not support any measurement reporting and
+handover is triggered by telnet command. Therefore, ensure that both gNBs and
+UE are built with telnet support:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>./build_oai<span class="w"> </span>--ninja<span class="w"> </span>--nrUE<span class="w"> </span>--gNB<span class="w"> </span>--build-lib<span class="w"> </span>telnetsrv
+</code></pre></div>
+<p>Run the 5G Core Network if not already running.</p>
+<ol>
+<li>Start the source gNB (gNB-PCI0) e.g.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./nr-softmodem<span class="w"> </span>-O<span class="w"> </span>../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.pci0.rfsim.conf<span class="w"> </span>--telnetsrv<span class="w"> </span>--telnetsrv.shrmod<span class="w"> </span>ci<span class="w"> </span>--telnetsrv.listenaddr<span class="w"> </span><span class="m">127</span>.0.0.2<span class="w"> </span>--gNBs.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.min_rxtxtime<span class="w"> </span><span class="m">6</span><span class="w"> </span>--rfsim<span class="w"> </span>--rfsimulator.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.serveraddr<span class="w"> </span><span class="m">127</span>.0.0.1
+</code></pre></div>
+<ol>
+<li>Start the UE e.g.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./nr-uesoftmodem<span class="w"> </span>-r<span class="w"> </span><span class="m">106</span><span class="w"> </span>--numerology<span class="w"> </span><span class="m">1</span><span class="w"> </span>--band<span class="w"> </span><span class="m">78</span><span class="w"> </span>-C<span class="w"> </span><span class="m">3619200000</span><span class="w"> </span>--rfsim<span class="w"> </span>--uicc0.imsi<span class="w"> </span><span class="m">001010000000001</span><span class="w"> </span>-O<span class="w"> </span>../../../ci-scripts/conf_files/nrue.uicc.conf<span class="w"> </span>--rfsimulator.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.serveraddr<span class="w"> </span>server
+</code></pre></div>
+<p>Ensure the UE successfully registers with the network.</p>
+<ol>
+<li>Start the target gNB (gNB-PCI1) e.g.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./nr-softmodem<span class="w"> </span>-O<span class="w"> </span>../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.pci1.rfsim.conf<span class="w"> </span>--rfsim<span class="w"> </span>--telnetsrv<span class="w"> </span>--telnetsrv.shrmod<span class="w"> </span>ci<span class="w"> </span>--telnetsrv.listenaddr<span class="w"> </span><span class="m">127</span>.0.0.3<span class="w"> </span>--gNBs.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.min_rxtxtime<span class="w"> </span><span class="m">6</span><span class="w"> </span>--rfsimulator.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.serveraddr<span class="w"> </span><span class="m">127</span>.0.0.1
+</code></pre></div>
+<p><strong>Note for same-machine setup:</strong> When running both gNBs on the same machine,
+add the following network interface options to the target gNB command, e.g.:</p>
+<div class="highlight"><pre><span></span><code>--gNBs.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.NETWORK_INTERFACES.GNB_IPV4_ADDRESS_FOR_NG_AMF<span class="w"> </span><span class="m">192</span>.168.71.180
+--gNBs.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.NETWORK_INTERFACES.GNB_IPV4_ADDRESS_FOR_NGU<span class="w"> </span><span class="m">192</span>.168.71.180
+</code></pre></div>
+<ol>
+<li>Trigger the N2 handover, e.g.</li>
+</ol>
+<p>From gNB-PCI0, trigger handover on target gNB with PCI 1 for UE ID 1:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>ci<span class="w"> </span>trigger_n2_ho<span class="w"> </span><span class="m">1</span>,1<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span><span class="m">127</span>.0.0.2<span class="w"> </span><span class="m">9090</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span>
+</code></pre></div>
+where the input parameters correspond to the PCI of the neighbor cell and the
+RRC ID of the UE.</p>
+<p>Alternatively, you can trigger a handover using a xApp. First, recompile RAN
+with <code>E2_AGENT</code> enabled, and <a href="../../openair2/E2AP/#22-flexric">build FlexRIC</a>. Rerun the RAN nodes, start nearRT-RIC and xApp:
+<div class="highlight"><pre><span></span><code>./build/examples/ric/nearRT-RIC
+./build/examples/xApp/c/rc_handover/xapp_rc_handover
+</code></pre></div></p>
+<p>This will initiate the N2 handover on the source gNB.</p>
+<h3 id="neighbour-list-and-measurement-configuration">Neighbour list and measurement configuration<a class="headerlink" href="#neighbour-list-and-measurement-configuration" title="Permanent link">&para;</a></h3>
+<p>Make sure the configuration file contains a neighbour list and measurement
+configuration, e.g. <a href="https://github.com/duranta-project/openairinterface5g/blob/develop/ci-scripts/conf_files/neighbour-config.conf">neighbour-config.conf</a>.
+This configuration can also be present in a different file and included in the
+gNB configuration file with <code>@include "neighbour-config-rfsim.conf"</code>.</p>
+<p>The neighbor configuration is nested:</p>
+<ul>
+<li><code>neighbour_list</code> outer entries are keyed by serving <code>nr_cellid</code></li>
+<li>each outer entry contains <code>neighbour_cell_configuration</code>, i.e., the list of neighbor cells for that serving cell</li>
+</ul>
+<p>In this model:</p>
+<ul>
+<li>outer <code>nr_cellid</code> entries should be unique</li>
+<li>neighbor <code>physical_cellId</code> values are defined in inner neighbor entries</li>
+<li>the same serving-cell keyed neighbor mapping is used for F1, N2 and Xn
+  handover logic</li>
+</ul>
+<p>See the example above for <code>neighbour-config-ho.conf</code>. The same configuration
+is for F1, N2 and Xn handover.</p>
+<h2 id="xn-handover">Xn Handover<a class="headerlink" href="#xn-handover" title="Permanent link">&para;</a></h2>
+<h3 id="run-the-setup_2">Run the setup<a class="headerlink" href="#run-the-setup_2" title="Permanent link">&para;</a></h3>
+<p>An Xn handover transfers a UE from one gNB to another, like an N2 handover,
+but the handover is prepared directly between the two gNBs over the Xn
+interface (XnAP), without the AMF. The AMF is only involved at the end, when
+the target gNB switches the N3 path with an NGAP Path Switch Request. See the
+<a href=".././XnAP/Xn-design/">Xn design document</a> and the
+<a href=".././XnAP/xnap_procedures/">Xn procedures</a> for details.</p>
+<p>We assume the same setup as for <a href="#n2-handover">N2 handover</a>, plus:</p>
+<ul>
+<li>An <code>Xn_INTERFACE</code> section in both gNB configuration files, each listing the
+  other gNB as candidate.</li>
+<li>The UE has an established PDU session: an Xn handover is not triggered
+  without one.</li>
+</ul>
+<p>The source gNB uses Xn handover towards a neighbour if the neighbour's
+<code>gNB_ID</code> in <code>neighbour_list</code> belongs to a gNB with which Xn Setup has
+completed (an "Xn candidate"). Otherwise, it falls back to N2 handover. This
+applies to the A3 event trigger. The telnet command <code>trigger_xn_ho</code> always
+uses Xn: if the neighbour is not an Xn candidate, the gNB logs <code>Xn HO trigger
+failed ... no Xn connection</code> (the telnet reply does not report it).</p>
+<h3 id="xn-configuration">Xn configuration<a class="headerlink" href="#xn-configuration" title="Permanent link">&para;</a></h3>
+<p>Add the following section to each gNB configuration file, inside the <code>gNBs</code>
+entry (e.g. next to <code>NETWORK_INTERFACES</code>).</p>
+<p>gNB-PCI0 (<code>gnb.sa.band78.fr1.106PRB.pci0.rfsim.conf</code>, <code>gNB_ID = 0xe00</code>):</p>
+<div class="highlight"><pre><span></span><code>Xn_INTERFACE :
+{
+  gnb_ipv4_address_for_xnc           = "127.0.0.2";
+  candidate_gnb_ipv4_address_for_xnc = ({ ip = "127.0.0.3"; });
+};
+</code></pre></div>
+<p>gNB-PCI1 (<code>gnb.sa.band78.fr1.106PRB.pci1.rfsim.conf</code>, <code>gNB_ID = 0xb00</code>):</p>
+<div class="highlight"><pre><span></span><code>Xn_INTERFACE :
+{
+  gnb_ipv4_address_for_xnc           = "127.0.0.3";
+  candidate_gnb_ipv4_address_for_xnc = ({ ip = "127.0.0.2"; });
+};
+</code></pre></div>
+<p>See the <a href=".././XnAP/Xn-design/#4-configuration">Xn configuration</a> for the
+parameters. Both gNBs must have the same PLMN, and their <code>gNB_ID</code> must match
+the <code>gNB_ID</code> of the neighbour entries in <code>neighbour-config-rfsim.conf</code>, which
+is the case for these files.</p>
+<h3 id="steps-to-run-xn-handover-with-oai-ue">Steps to run Xn handover with OAI UE<a class="headerlink" href="#steps-to-run-xn-handover-with-oai-ue" title="Permanent link">&para;</a></h3>
+<p>Follow steps 1 to 4 of <a href="#steps-to-run-n2-handover-with-oai-ue">N2 handover</a>,
+with the configuration files containing the <code>Xn_INTERFACE</code> section above.</p>
+<p>Each gNB starts Xn after NG Setup with the AMF and connects to its
+candidates. A failed connection is not retried. Because the target gNB is
+started after the source gNB, the target gNB opens the connection and sends
+Xn Setup Request. On both gNBs, check that Xn Setup completed, e.g. on
+gNB-PCI0 (gNB-PCI1 shows <code>gNB_id 0xe00</code>):</p>
+<div class="highlight"><pre><span></span><code>Xn candidate gNB_id 0xb00 registered (assoc_id 3)
+</code></pre></div>
+<ol>
+<li>Trigger the Xn handover, e.g.</li>
+</ol>
+<p>From gNB-PCI0, trigger handover to the neighbour cell with PCI 1 for UE ID 1:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>ci<span class="w"> </span>trigger_xn_ho<span class="w"> </span><span class="m">1</span>,1<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span><span class="m">127</span>.0.0.2<span class="w"> </span><span class="m">9090</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span>
+</code></pre></div>
+<p>where the input parameters correspond to the PCI of the neighbor cell and the
+RRC ID of the UE.</p>
+<p>With a measurement configuration (A3 event), the handover is triggered
+automatically, and Xn is used because gNB-PCI1 is an Xn candidate.</p>
+<ol>
+<li>Check the handover:</li>
+</ol>
+<ul>
+<li>Source gNB: Handover Request sent, Handover Request Acknowledge received,
+  RRCReconfiguration with the handover command sent to the UE, SN Status
+  Transfer sent.</li>
+<li>Target gNB: UE arrives (RRCReconfigurationComplete), Path Switch Request and
+  Acknowledge with the AMF, UE Context Release sent to the source gNB.</li>
+<li>Source gNB: UE Context Release received, the UE is released at the source
+  without signalling to the AMF.</li>
+<li>UE: data traffic continues through the target gNB, e.g. <code>ping</code> over the
+  <code>oaitun_ue1</code> interface.</li>
+</ul>
+<p>The RRC logs of the Xn handover start with <code>Xn HO source: UE &lt;id&gt;</code> or
+<code>Xn HO target: UE &lt;id&gt;</code>, and show the XnAP UE IDs of both sides
+(<code>s_xnap_ue_id</code>, <code>t_xnap_ue_id</code>), so that e.g. <code>grep "Xn HO"</code> shows the flow
+on each gNB. The handover ends at the target with
+<code>Path Switch done, sending UE Context Release to the source</code>, and at the
+source with <code>UE Context Release received ..., handover complete</code>. For more
+details, add <code>--log_config.nr_rrc_log_level debug</code> (each RRC step, e.g. E1 and
+F1 setup at the target) and <code>--log_config.xnap_log_level debug</code> (message
+contents and XnAP UE ID table changes).</p>
+<p>Use Wireshark with the capture filter <code>sctp</code> to see the XnAP messages on the
+loopback interface, and the NGAP messages on the interface towards the AMF.</p>
+<p>If the target gNB cannot admit the UE, it answers with a Handover Preparation
+Failure and the UE stays on the source gNB.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ntn-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NTN setup">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                NTN setup
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../nr-dc/" class="md-footer__link md-footer__link--next" aria-label="Next: F1-based NR-DC">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                F1-based NR-DC
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!-- SPDX-License-Identifier: MIT -->
+
+<div class="md-copyright duranta-footer">
+  <a href="https://github.com/duranta-project" target="_blank" rel="noopener" class="duranta-footer__logo">
+    <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="Duranta">
+  </a>
+  <div class="md-copyright__highlight">
+    <div>&copy; 2026 Duranta Project &middot; openairinterface5g</div>
+    <div>
+      Documentation licensed under
+      <a href="https://github.com/duranta-project/openairinterface5g/blob/develop/LICENSES/preferred/CC-BY-4.0.txt" target="_blank" rel="noopener">CC BY 4.0</a>
+    </div>
+    <div>
+      For any bugs or problems, please
+      <a href="https://github.com/duranta-project/openairinterface5g/issues" target="_blank" rel="noopener">open an issue on GitHub</a>.
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.expand","navigation.instant","navigation.instant.progress","navigation.tracking","navigation.top","navigation.footer","toc.follow","search.suggest","search.highlight","content.code.copy","content.action.edit","content.action.view"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

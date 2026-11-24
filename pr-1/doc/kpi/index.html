@@ -1,0 +1,6373 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of the Duranta openairinterface5g project">
+      
+      
+      
+      
+      
+        <link rel="prev" href="../Supported_Hardware_Operating_System/">
+      
+      
+        <link rel="next" href="../GET_SOURCES/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Colour-500.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>Key performance indicators - openairinterface5g</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.0006804e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.813d4b3f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/duranta-theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="openairinterface5g" class="md-header__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openairinterface5g
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Key performance indicators
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  General
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../NR_SA_Tutorial_OAI_CN5G/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../SW_archi/" class="md-tabs__link">
+          
+  
+  Designs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docker/" class="md-tabs__link">
+          
+  
+  Container Images
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../common/utils/T/DOC/T/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UnitTests/" class="md-tabs__link">
+          
+  
+  Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AGENTS/" class="md-tabs__link">
+          
+  
+  Developer tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="openairinterface5g" class="md-nav__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    openairinterface5g
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FEATURE_SET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Feature set
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supported_Hardware_Operating_System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Supported hardware and operating systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Key performance indicators
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Key performance indicators
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr1-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR1 bands
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. nr-softmodem Performance in oai-gNB and oai-gNB-du Modes for FR1 bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-for-usrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application level throughput for USRP
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application level throughput for USRP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-for-o-ran-72-fronthaul" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application level throughput for O-RAN 7.2 Fronthaul
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application level throughput for O-RAN 7.2 Fronthaul">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsrp-and-application-level-throughput-heatmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RSRP and Application level throughput Heatmaps
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RSRP and Application level throughput Heatmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsrp-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RSRP Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-heatmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application-Level Throughput Heatmaps
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application-Level Throughput Heatmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp-downlink-throughput-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UDP Downlink Throughput Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-uplink-throughput-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UDP Uplink Throughput Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bidirectional-udp-mobility-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bidirectional UDP Mobility Test
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr2-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR2 bands
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. nr-softmodem Performance in oai-gNB and oai-gNB-du Modes for FR2 bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-point-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Static-point Test
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static-point Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        KPI
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Range Test
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Results
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-performance-metrics-for-oai-block-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Performance Metrics for OAI Block Tests
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Performance Metrics for OAI Block Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-physical-simulators-physims" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1 Physical Simulators (<code>physims</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Physical Simulators (physims)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example commands
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile 1
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile 2
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nr-uesoftmodem" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. <code>nr-uesoftmodem</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. nr-uesoftmodem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GET_SOURCES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting the sources
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BUILD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building OAI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Packages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tuning_and_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tuning and security
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Roadmap
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Changelog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started with 5G
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Getting started with 5G
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_CN5G/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI 5G core network
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI gNB with a COTS UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_nrUE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_multi_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple OAI NR-UEs with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running OAI
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Running OAI
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RUNMODEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runmodem-nrue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAC/mac-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB MAC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RRC/rrc-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RRC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gNB_frequency_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Setting the gNB frequency
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TESTING_OAI_NSA_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G NSA setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ntn-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTN setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handover-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Handover
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1-based NR-DC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RUN_NR_PRS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Positioning reference signal (PRS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/E2AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E2 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/E3AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E3 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-sidelink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sidelink
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Functional splits
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Functional splits
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1AP/F1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E1AP/E1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORAN_FHI7.2_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORAN_FHI7.2_ORU_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fronthaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Native 7.2x fronthaul library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nfapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI-VNF and OAI-PNF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_NFAPI_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nFAPI internals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aerial_FAPI_Split_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NVIDIA Aerial and Foxconn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hardware acceleration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Hardware acceleration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LDPC_OFFLOAD_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC accelerators (AMD/Xilinx T2, Intel ACCs, ORS Aurora)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NR_SA_Tutorial_OAI_nrUE_GPU_offload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NR-UE with the GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/CODING/nrLDPC_coding/nrLDPC_coding_cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/SIMULATION/TOOLS/DOC/gpu_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU-accelerated channel simulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Simulators
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Simulators
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physical-simulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/SIMULATION/TOOLS/DOC/channel_simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Channel simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UE_Positioning_in_DigitalTwin_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE positioning in a digital twin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Legacy
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Legacy
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI_NOS1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator without S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2NFAPI_S1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator with S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L1SIM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G L1 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d2d_emulator_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G device-to-device (D2D) emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Designs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Designs
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Software architecture
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SW-archi-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 flow graph in the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nr-ue-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 threads in the NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1AP/F1AP-lib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1AP message library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GTP/gtp-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GTP-U design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XnAP/Xn-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Xn design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NRPPA/NRPPA-call-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NRPPa call flow
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5Gnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE 5G NAS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beamforming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Beamforming
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rach_processing_in_gNB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RACH processing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UL_MIMO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UL MIMO
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Container Images
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Container Images
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/5g_rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/4g_rfsimulator_fdd_05MHz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/yaml_files/sa_fhi_7.2_vvdn_gnb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 with a VVDN O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openshift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators in OpenShift
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/T/DOC/T/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  T tracer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/config/DOC/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/LOG/DOC/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/DOC/loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared object loader
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/threadPool/thread-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Thread pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/actor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Actor utility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/ocp_itti/itti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inter-task interface (ITTI)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/CODING/DOC/LDPCImplementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC implementation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Time management
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Radios
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Radios
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/USRP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  USRP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/BLADERF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BladeRF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/iqplayer/DOC/iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q player
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q record and replay
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/fhi_72/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul driver (fhi_72)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/ETHERNET/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ethernet fronthaul drivers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/vrtsim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vrtsim
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/emulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RF emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../radio/zmq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ZeroMQ (zmq)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Special-purpose libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Special-purpose libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair1/PHY/TOOLS/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scopes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/telnetsrv/DOC/telnethelp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Telnet server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/utils/websrv/DOC/websrv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RT data recording app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Testing
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Testing
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UnitTests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Unit tests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TESTBenches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test benches
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CI framework
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Component tests (in tests/)
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Component tests (in tests/)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-cuup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-UP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-cu-nrppa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-NRPPa tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tests/nr-ue-nas-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE NAS tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openair2/XNAP/tests/xn-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  XNAP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer tools
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Developer tools
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Repository agent guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution requirements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-style-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-compile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cross-compilation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clang-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  clang-format
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Formatting check
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cppcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  cppcheck
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_tools/sanitizers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sanitizers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/iwyu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  include-what-you-use (iwyu)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/docker-dev-env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Docker development environment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plotting tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_tools/performance_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Performance monitoring
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc_best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation best practices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr1-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR1 bands
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. nr-softmodem Performance in oai-gNB and oai-gNB-du Modes for FR1 bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-for-usrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application level throughput for USRP
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application level throughput for USRP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-for-o-ran-72-fronthaul" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application level throughput for O-RAN 7.2 Fronthaul
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application level throughput for O-RAN 7.2 Fronthaul">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsrp-and-application-level-throughput-heatmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RSRP and Application level throughput Heatmaps
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RSRP and Application level throughput Heatmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsrp-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RSRP Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-level-throughput-heatmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application-Level Throughput Heatmaps
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application-Level Throughput Heatmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp-downlink-throughput-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UDP Downlink Throughput Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-uplink-throughput-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UDP Uplink Throughput Heatmap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bidirectional-udp-mobility-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bidirectional UDP Mobility Test
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr2-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR2 bands
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. nr-softmodem Performance in oai-gNB and oai-gNB-du Modes for FR2 bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-point-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Static-point Test
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static-point Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        KPI
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Range Test
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Results
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-performance-metrics-for-oai-block-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Performance Metrics for OAI Block Tests
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Performance Metrics for OAI Block Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-physical-simulators-physims" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1 Physical Simulators (<code>physims</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Physical Simulators (physims)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example commands
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile 1
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-profile-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile 2
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nr-uesoftmodem" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. <code>nr-uesoftmodem</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. nr-uesoftmodem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-profile_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Test Profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/duranta-project/openairinterface5g/edit/develop/doc/kpi.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/duranta-project/openairinterface5g/raw/develop/doc/kpi.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="key-performance-indicators-for-the-openairinterface-code-base">Key Performance Indicators for the OpenAirInterface Code Base<a class="headerlink" href="#key-performance-indicators-for-the-openairinterface-code-base" title="Permanent link">&para;</a></h1>
+<p>The goal of this document is to provide some Key Performance Indicators (KPI) for openairinterface5g RAN and UE stack. </p>
+<p>For every test we have mentioned the test/host system, but the same results can be achieved on <a href=".././Supported_Hardware_Operating_System/">other systems</a></p>
+<h2 id="1-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr1-bands">1. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR1 bands<a class="headerlink" href="#1-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr1-bands" title="Permanent link">&para;</a></h2>
+<h3 id="application-level-throughput-for-usrp">Application level throughput for USRP<a class="headerlink" href="#application-level-throughput-for-usrp" title="Permanent link">&para;</a></h3>
+<h4 id="test-profile">Test Profile<a class="headerlink" href="#test-profile" title="Permanent link">&para;</a></h4>
+<p>The following results apply to the TDD configuration below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>n41</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>30 kHz</td>
+</tr>
+<tr>
+<td>DL test TDD Pattern</td>
+<td><code>DDDSU</code>, 2.5ms</td>
+</tr>
+<tr>
+<td>UL test TDD Pattern</td>
+<td><code>DDSUU</code>, 2.5ms</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Test System: AMD Ryzen 9 7950X 16-Core Processor</li>
+<li>Radio: USRP N310 </li>
+<li>UE: Quectel RM500Q</li>
+<li>Environment: OTA, distance: 2m</li>
+<li>Application level throughput tested using iperf3 UDP</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bandwidth MHz/PRB</th>
+<th style="text-align: right;">Layers</th>
+<th style="text-align: right;">DL Throughput (Mbps)</th>
+<th style="text-align: right;">UL Throughput (Mbps)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20(51)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">143</td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">X</td>
+</tr>
+<tr>
+<td>40(106)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">304</td>
+<td style="text-align: right;">154</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">X</td>
+</tr>
+<tr>
+<td>60(162)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">233</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">466</td>
+<td style="text-align: right;">175</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">730</td>
+<td style="text-align: right;">X</td>
+</tr>
+<tr>
+<td>80(217)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">310</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">622</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">X</td>
+<td style="text-align: right;">X</td>
+</tr>
+<tr>
+<td>100(273)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">101</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">120</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-level-throughput-for-o-ran-72-fronthaul">Application level throughput for O-RAN 7.2 Fronthaul<a class="headerlink" href="#application-level-throughput-for-o-ran-72-fronthaul" title="Permanent link">&para;</a></h3>
+<h4 id="test-profile_1">Test Profile<a class="headerlink" href="#test-profile_1" title="Permanent link">&para;</a></h4>
+<p>The following results apply to the TDD configuration below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>n78/n77</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>30 kHz</td>
+</tr>
+<tr>
+<td>DL test TDD Pattern</td>
+<td><code>DDDSU</code>, 2.5ms, 10D2G2U</td>
+</tr>
+<tr>
+<td>UL test TDD Pattern</td>
+<td><code>DDSUU</code>, 2.5ms, 6D4G4U</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Test System: AMD EPYC 9575F 64-Core Processor</li>
+<li>Radio: Benetel 550 O-RU</li>
+<li>UE: Quectel RM520N</li>
+<li>Environment: OTA, distance: 2m</li>
+<li>Uncompressed mode with avx512 disabled at compile time</li>
+<li>Application level throughput tested using iperf3 UDP</li>
+</ul>
+<p>9b BFP static compression, 4T4R</p>
+<table>
+<thead>
+<tr>
+<th>Bandwidth MHz/PRB</th>
+<th style="text-align: right;">Layers</th>
+<th style="text-align: right;">DL Throughput (Mbps)</th>
+<th style="text-align: right;">UL Throughput (Mbps)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40(106)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">158</td>
+<td style="text-align: right;">79</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">315</td>
+<td style="text-align: right;">118</td>
+</tr>
+<tr>
+<td>100(273)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">412</td>
+<td style="text-align: right;">180</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">820</td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">X</td>
+</tr>
+</tbody>
+</table>
+<p>16b no compression, 2T2R</p>
+<table>
+<thead>
+<tr>
+<th>Bandwidth MHz/PRB</th>
+<th style="text-align: right;">Layers</th>
+<th style="text-align: right;">DL Throughput (Mbps)</th>
+<th style="text-align: right;">UL Throughput (Mbps)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40(106)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">158</td>
+<td style="text-align: right;">67</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">315</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr>
+<td>100(273)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">412</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">820</td>
+<td style="text-align: right;">200</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rsrp-and-application-level-throughput-heatmaps">RSRP and Application level throughput Heatmaps<a class="headerlink" href="#rsrp-and-application-level-throughput-heatmaps" title="Permanent link">&para;</a></h3>
+<h4 id="test-profile_2">Test Profile<a class="headerlink" href="#test-profile_2" title="Permanent link">&para;</a></h4>
+<h4 id="test-profile_3">Test Profile<a class="headerlink" href="#test-profile_3" title="Permanent link">&para;</a></h4>
+<p>The measurements were collected with the following FR1 O-RAN 7.2 setup:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>n78</td>
+</tr>
+<tr>
+<td>Center frequency</td>
+<td>3,500.25 MHz</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>30 kHz</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>100 MHz / 273 PRBs</td>
+</tr>
+<tr>
+<td>Radio configuration</td>
+<td>4T4R, 4 DL layers, 1 UL layer</td>
+</tr>
+<tr>
+<td>Fronthaul compression</td>
+<td>9-bit BFP static compression</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Test System: AMD EPYC 9575F 64-Core Processor</li>
+<li>Operating System: Ubuntu 25.04 (plucky)</li>
+<li>Network Interface: Intel E810-C, 100G</li>
+<li>Radio: Metanoia FR1 O-RU</li>
+<li>UE: Samsung S25 Ultra</li>
+<li>Environment: OTA, first floor of EURECOM</li>
+<li>Application-level throughput tested using iperf3 UDP</li>
+</ul>
+<h4 id="rsrp-heatmap">RSRP Heatmap<a class="headerlink" href="#rsrp-heatmap" title="Permanent link">&para;</a></h4>
+<p><img alt="FR1 RSRP heatmap" src="https://github.com/user-attachments/assets/6bea108c-841e-42bb-ada5-d829861c62fa" /></p>
+<h4 id="application-level-throughput-heatmaps">Application-Level Throughput Heatmaps<a class="headerlink" href="#application-level-throughput-heatmaps" title="Permanent link">&para;</a></h4>
+<h5 id="udp-downlink-throughput-heatmap">UDP Downlink Throughput Heatmap<a class="headerlink" href="#udp-downlink-throughput-heatmap" title="Permanent link">&para;</a></h5>
+<p><img alt="FR1 UDP downlink throughput heatmap" src="https://github.com/user-attachments/assets/254adbbc-7522-4403-9f6b-282d507e5e47" /></p>
+<h5 id="udp-uplink-throughput-heatmap">UDP Uplink Throughput Heatmap<a class="headerlink" href="#udp-uplink-throughput-heatmap" title="Permanent link">&para;</a></h5>
+<p><img alt="FR1 UDP uplink throughput heatmap" src="https://github.com/user-attachments/assets/ba7a5568-efba-4ba7-9840-c84ed57f8563" /></p>
+<h4 id="bidirectional-udp-mobility-test">Bidirectional UDP Mobility Test<a class="headerlink" href="#bidirectional-udp-mobility-test" title="Permanent link">&para;</a></h4>
+<p>The route started close to the O-RU, moved to a remote non-line-of-sight
+position, returned close to the O-RU, and then moved away again until the UE
+disconnected.</p>
+<p><img alt="FR1 bidirectional UDP mobility throughput" src="https://github.com/user-attachments/assets/941285e3-e9b2-4cf8-aba2-2adb5a3ab761" /></p>
+<h2 id="2-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr2-bands">2. <code>nr-softmodem</code> Performance in <code>oai-gNB</code> and <code>oai-gNB-du</code> Modes for FR2 bands<a class="headerlink" href="#2-nr-softmodem-performance-in-oai-gnb-and-oai-gnb-du-modes-for-fr2-bands" title="Permanent link">&para;</a></h2>
+<h3 id="static-point-test">Static-point Test<a class="headerlink" href="#static-point-test" title="Permanent link">&para;</a></h3>
+<h4 id="test-profile_4">Test Profile<a class="headerlink" href="#test-profile_4" title="Permanent link">&para;</a></h4>
+<p>The following results apply to the TDD configuration below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>257</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>120 kHz</td>
+</tr>
+<tr>
+<td>DL test TDD Pattern</td>
+<td><code>DDDSU</code>, 0.625ms, 10D2U</td>
+</tr>
+<tr>
+<td>UL test TDD Pattern</td>
+<td><code>DDDSU</code>, 0.625ms, 64D4U</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Test System: AMD EPYC 9575F 64-Core Processor</li>
+<li>Radio: MicroAmp, LiteON FR2</li>
+<li>UE: Quectel RG530F</li>
+<li>Environment: OTA, distance: 2m</li>
+<li>Application level throughput tested using iperf3 UDP</li>
+</ul>
+<h5 id="kpi">KPI<a class="headerlink" href="#kpi" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Bandwidth MHz/PRB</th>
+<th style="text-align: right;">Layers</th>
+<th style="text-align: right;">DL Throughput (Mbps)</th>
+<th style="text-align: right;">UL Throughput (Mbps)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100(66)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">X</td>
+<td style="text-align: right;">X</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">x</td>
+</tr>
+<tr>
+<td>200(132)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">86</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">890</td>
+<td style="text-align: right;">x</td>
+</tr>
+</tbody>
+</table>
+<p>Round trip time (measured using icmp ping): 4.526 ms</p>
+<p>With <code>ulsch_max_frame_inactivity= 0;</code></p>
+<h3 id="range-test">Range Test<a class="headerlink" href="#range-test" title="Permanent link">&para;</a></h3>
+<h4 id="test-profile_5">Test Profile<a class="headerlink" href="#test-profile_5" title="Permanent link">&para;</a></h4>
+<p>The following results apply to the FR2 central-beam configuration below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>n257</td>
+</tr>
+<tr>
+<td>Center frequency</td>
+<td>26,700 MHz</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>120 kHz</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>200 MHz / 132 PRBs</td>
+</tr>
+<tr>
+<td>Radio configuration</td>
+<td>2T2R, 2 DL layers, 1 UL layer</td>
+</tr>
+<tr>
+<td>Fronthaul compression</td>
+<td>9-bit compression</td>
+</tr>
+<tr>
+<td>Distance range</td>
+<td>5 m to 40 m, in 5 m steps</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Test System: AMD EPYC 9575F 64-Core Processor</li>
+<li>Operating System: Ubuntu 25.04 (plucky)</li>
+<li>Network Interface: Intel E810-C, 100G</li>
+<li>Radio: Metanoia FR2 O-RU</li>
+<li>UE: Microamp FR2 CPE</li>
+<li>Environment: OTA</li>
+<li>Application-level throughput tested using iperf3 UDP</li>
+</ul>
+<h4 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Distance from O-RU (m)</th>
+<th style="text-align: right;">Average RSRP (dBm)</th>
+<th style="text-align: right;">UL SNR (dB)</th>
+<th style="text-align: right;">DL Throughput (Mbps)</th>
+<th style="text-align: right;">UL Throughput (Mbps)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">-56</td>
+<td style="text-align: right;">20.1</td>
+<td style="text-align: right;">1284.32</td>
+<td style="text-align: right;">81.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-62</td>
+<td style="text-align: right;">20.7</td>
+<td style="text-align: right;">1222.12</td>
+<td style="text-align: right;">20.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">-66</td>
+<td style="text-align: right;">21.9</td>
+<td style="text-align: right;">1248.73</td>
+<td style="text-align: right;">16.0</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">-68</td>
+<td style="text-align: right;">21.1</td>
+<td style="text-align: right;">936.08</td>
+<td style="text-align: right;">18.3</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">-71</td>
+<td style="text-align: right;">19.4</td>
+<td style="text-align: right;">891.72</td>
+<td style="text-align: right;">17.2</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">-70</td>
+<td style="text-align: right;">19.0</td>
+<td style="text-align: right;">570.45</td>
+<td style="text-align: right;">16.3</td>
+</tr>
+<tr>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">-72</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">607.68</td>
+<td style="text-align: right;">20.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">-73</td>
+<td style="text-align: right;">20.0</td>
+<td style="text-align: right;">543.33</td>
+<td style="text-align: right;">11.7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-performance-metrics-for-oai-block-tests">3. Performance Metrics for OAI Block Tests<a class="headerlink" href="#3-performance-metrics-for-oai-block-tests" title="Permanent link">&para;</a></h2>
+<h3 id="31-physical-simulators-physims">3.1 Physical Simulators (<code>physims</code>)<a class="headerlink" href="#31-physical-simulators-physims" title="Permanent link">&para;</a></h3>
+<p>For execution details, see <a href=".././physical-simulators/">physical-simulators.md</a>.</p>
+<p>The tables below report the gNB processing time, in microseconds, averaged over
+1000 frames (<code>-n1000</code>), for a set of bandwidth, layer, SNR and MCS combinations:</p>
+<ul>
+<li>TX processing is the <code>PHY proc tx</code> value reported by <code>nr_dlsim -P</code></li>
+<li>RX processing is the <code>Total PHY proc rx</code> value reported by <code>nr_ulsim -P</code></li>
+<li>DLSCH encoding is the <code>DLSCH encoding time</code> reported by <code>nr_dlsim -P</code></li>
+<li>ULSCH decoding is the <code>ULSCH total decoding time</code> reported by <code>nr_ulsim -P</code></li>
+</ul>
+<p><code>nr_dlsim</code> covers the DL only and <code>nr_ulsim</code> the UL only, hence the antenna
+configurations do not fully overlap: entries marked <code>-</code> are not measured.</p>
+<h4 id="example-commands">Example commands<a class="headerlink" href="#example-commands" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># DL: 40 MHz (106 PRB), 1 layer, SNR 20, MCS 15</span>
+./nr_dlsim<span class="w"> </span>-n1000<span class="w"> </span>-s20<span class="w"> </span>-S20.2<span class="w"> </span>-e15<span class="w"> </span>-b106<span class="w"> </span>-R106<span class="w"> </span>-X<span class="w"> </span>&lt;list<span class="w"> </span>of<span class="w"> </span>isolated<span class="w"> </span>CPUs&gt;<span class="w"> </span>-P
+<span class="c1"># UL: 40 MHz (106 PRB), 1 layer, SNR 20, MCS 15</span>
+./nr_ulsim<span class="w"> </span>-n1000<span class="w"> </span>-s20<span class="w"> </span>-S20<span class="w"> </span>-m15<span class="w"> </span>-r106<span class="w"> </span>-R106<span class="w"> </span>-C8<span class="w"> </span>-P
+</code></pre></div>
+<p>To obtain the other entries of the tables, adapt the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-b</code>/<code>-R</code> (nr_dlsim), <code>-r</code>/<code>-R</code> (nr_ulsim)</td>
+<td>Number of PRBs, e.g. <code>106</code> for 40 MHz, <code>273</code> for 100 MHz</td>
+</tr>
+<tr>
+<td><code>-s</code>/<code>-S</code></td>
+<td>SNR, e.g. <code>-s20 -S20.2</code> (nr_dlsim) or <code>-s20 -S20</code> (nr_ulsim)</td>
+</tr>
+<tr>
+<td><code>-e</code> (nr_dlsim), <code>-m</code> (nr_ulsim)</td>
+<td>MCS index, e.g. <code>20</code> or <code>25</code></td>
+</tr>
+<tr>
+<td><code>-x</code> (nr_dlsim), <code>-W</code> (nr_ulsim)</td>
+<td>Number of layers, e.g. <code>-x2</code> or <code>-W2</code></td>
+</tr>
+<tr>
+<td><code>-z</code>/<code>-y</code></td>
+<td>Number of RX/TX antennas, e.g. <code>-z2 -y2</code> or <code>-z4 -y4</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="test-profile-1">Test Profile 1<a class="headerlink" href="#test-profile-1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machine</td>
+<td>AMD Ryzen 9 7945HX</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>x86_64</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SNR/MCS</th>
+<th>Bandwidth MHz/PRB</th>
+<th>Configuration</th>
+<th style="text-align: right;">TX Processing - nr_dlsim (us)</th>
+<th style="text-align: right;">DLSCH Encoding - nr_dlsim (us)</th>
+<th style="text-align: right;">RX Processing - nr_ulsim (us)</th>
+<th style="text-align: right;">ULSCH Decoding - nr_ulsim (us)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20/15</td>
+<td>40(106)</td>
+<td>1 layer</td>
+<td style="text-align: right;">44.86</td>
+<td style="text-align: right;">30.52</td>
+<td style="text-align: right;">119.81</td>
+<td style="text-align: right;">81.85</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">52.90</td>
+<td style="text-align: right;">27.51</td>
+<td style="text-align: right;">233.62</td>
+<td style="text-align: right;">121.25</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">63.41</td>
+<td style="text-align: right;">27.87</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td></td>
+<td>100(273)</td>
+<td>1 layer</td>
+<td style="text-align: right;">57.85</td>
+<td style="text-align: right;">28.70</td>
+<td style="text-align: right;">212.31</td>
+<td style="text-align: right;">139.86</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">94.79</td>
+<td style="text-align: right;">38.12</td>
+<td style="text-align: right;">442.09</td>
+<td style="text-align: right;">211.39</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">118.37</td>
+<td style="text-align: right;">37.60</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>30/25</td>
+<td>40(106)</td>
+<td>1 layer</td>
+<td style="text-align: right;">41.08</td>
+<td style="text-align: right;">25.64</td>
+<td style="text-align: right;">121.39</td>
+<td style="text-align: right;">77.98</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">58.41</td>
+<td style="text-align: right;">31.61</td>
+<td style="text-align: right;">340.42</td>
+<td style="text-align: right;">121.84</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">69.55</td>
+<td style="text-align: right;">32.17</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td></td>
+<td>100(273)</td>
+<td>1 layer</td>
+<td style="text-align: right;">68.81</td>
+<td style="text-align: right;">37.36</td>
+<td style="text-align: right;">225.67</td>
+<td style="text-align: right;">133.66</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">109.75</td>
+<td style="text-align: right;">49.11</td>
+<td style="text-align: right;">748.93</td>
+<td style="text-align: right;">262.83</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">140.59</td>
+<td style="text-align: right;">55.78</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="test-profile-2">Test Profile 2<a class="headerlink" href="#test-profile-2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machine</td>
+<td>DGX Spark, Cortex-X925, 20 cores</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>aarch64</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SNR/MCS</th>
+<th>Bandwidth MHz/PRB</th>
+<th>Configuration</th>
+<th style="text-align: right;">TX Processing - nr_dlsim (us)</th>
+<th style="text-align: right;">DLSCH Encoding - nr_dlsim (us)</th>
+<th style="text-align: right;">RX Processing - nr_ulsim (us)</th>
+<th style="text-align: right;">ULSCH Decoding - nr_ulsim (us)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20/15</td>
+<td>40(106)</td>
+<td>1 layer</td>
+<td style="text-align: right;">78.87</td>
+<td style="text-align: right;">46.69</td>
+<td style="text-align: right;">156.54</td>
+<td style="text-align: right;">97.61</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">112.56</td>
+<td style="text-align: right;">52.44</td>
+<td style="text-align: right;">332.56</td>
+<td style="text-align: right;">147.42</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">142.34</td>
+<td style="text-align: right;">54.21</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td></td>
+<td>100(273)</td>
+<td>1 layer</td>
+<td style="text-align: right;">126.82</td>
+<td style="text-align: right;">58.30</td>
+<td style="text-align: right;">274.24</td>
+<td style="text-align: right;">168.85</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">239.51</td>
+<td style="text-align: right;">91.51</td>
+<td style="text-align: right;">677.19</td>
+<td style="text-align: right;">269.18</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">310.43</td>
+<td style="text-align: right;">92.67</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>30/25</td>
+<td>40(106)</td>
+<td>1 layer</td>
+<td style="text-align: right;">81.34</td>
+<td style="text-align: right;">48.89</td>
+<td style="text-align: right;">153.56</td>
+<td style="text-align: right;">92.56</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">129.66</td>
+<td style="text-align: right;">69.08</td>
+<td style="text-align: right;">552.92</td>
+<td style="text-align: right;">140.98</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">158.74</td>
+<td style="text-align: right;">69.13</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td></td>
+<td>100(273)</td>
+<td>1 layer</td>
+<td style="text-align: right;">151.22</td>
+<td style="text-align: right;">82.04</td>
+<td style="text-align: right;">294.53</td>
+<td style="text-align: right;">178.25</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 2 antennas</td>
+<td style="text-align: right;">276.59</td>
+<td style="text-align: right;">126.84</td>
+<td style="text-align: right;">1276.87</td>
+<td style="text-align: right;">300.83</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2 layers / 4 antennas</td>
+<td style="text-align: right;">350.57</td>
+<td style="text-align: right;">128.13</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-nr-uesoftmodem">4. <code>nr-uesoftmodem</code><a class="headerlink" href="#4-nr-uesoftmodem" title="Permanent link">&para;</a></h2>
+<h3 id="test-profile_6">Test Profile<a class="headerlink" href="#test-profile_6" title="Permanent link">&para;</a></h3>
+<p>The following results apply to the TDD configuration below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Band</td>
+<td>n78/n77</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>30 kHz</td>
+</tr>
+<tr>
+<td>QAM</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>SISO</td>
+</tr>
+</tbody>
+</table>
+<p>Testbed Architecture:</p>
+<p>UE &lt;--&gt; Over the Air 1.5m to 2m distance &lt;--&gt; USRP/RU &lt;--&gt; gNB/DU server</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>UE-Radio</th>
+<th>Bandwidth</th>
+<th style="text-align: right;">DL Throughput</th>
+<th style="text-align: right;">UL Throughput</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jetson Orin</td>
+<td>B210</td>
+<td>10 MHz</td>
+<td style="text-align: right;">12 Mbps</td>
+<td style="text-align: right;">7.5 Mbps</td>
+</tr>
+<tr>
+<td>Jetson Orin</td>
+<td>B210</td>
+<td>20 MHz</td>
+<td style="text-align: right;">20 Mbps</td>
+<td style="text-align: right;">9.5 Mbps</td>
+</tr>
+<tr>
+<td>Jetson Orin</td>
+<td>B210</td>
+<td>30 MHz</td>
+<td style="text-align: right;">61 Mbps</td>
+<td style="text-align: right;">33 Mbps</td>
+</tr>
+<tr>
+<td>Jetson Orin</td>
+<td>B210</td>
+<td>40 MHz</td>
+<td style="text-align: right;">69 Mbps</td>
+<td style="text-align: right;">46 Mbps</td>
+</tr>
+<tr>
+<td>DGX Spark</td>
+<td>B210</td>
+<td>40 MHz</td>
+<td style="text-align: right;">86 Mbps</td>
+<td style="text-align: right;">46 Mbps</td>
+</tr>
+<tr>
+<td>DGX Spark</td>
+<td>N310/x410</td>
+<td>100 MHz</td>
+<td style="text-align: right;">231 Mbps</td>
+<td style="text-align: right;">118 Mbps</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Supported_Hardware_Operating_System/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Supported hardware and operating systems">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Supported hardware and operating systems
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../GET_SOURCES/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting the sources">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Getting the sources
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!-- SPDX-License-Identifier: MIT -->
+
+<div class="md-copyright duranta-footer">
+  <a href="https://github.com/duranta-project" target="_blank" rel="noopener" class="duranta-footer__logo">
+    <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="Duranta">
+  </a>
+  <div class="md-copyright__highlight">
+    <div>&copy; 2026 Duranta Project &middot; openairinterface5g</div>
+    <div>
+      Documentation licensed under
+      <a href="https://github.com/duranta-project/openairinterface5g/blob/develop/LICENSES/preferred/CC-BY-4.0.txt" target="_blank" rel="noopener">CC BY 4.0</a>
+    </div>
+    <div>
+      For any bugs or problems, please
+      <a href="https://github.com/duranta-project/openairinterface5g/issues" target="_blank" rel="noopener">open an issue on GitHub</a>.
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.expand","navigation.instant","navigation.instant.progress","navigation.tracking","navigation.top","navigation.footer","toc.follow","search.suggest","search.highlight","content.code.copy","content.action.edit","content.action.view"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

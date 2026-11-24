@@ -1,0 +1,6222 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of the Duranta openairinterface5g project">
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Colour-500.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>Rrc dev - openairinterface5g</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.0006804e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.813d4b3f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/duranta-theme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="openairinterface5g" class="md-header__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openairinterface5g
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rrc dev
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  General
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../NR_SA_Tutorial_OAI_CN5G/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SW_archi/" class="md-tabs__link">
+          
+  
+  Designs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../docker/" class="md-tabs__link">
+          
+  
+  Container Images
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../common/utils/T/DOC/T/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../UnitTests/" class="md-tabs__link">
+          
+  
+  Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AGENTS/" class="md-tabs__link">
+          
+  
+  Developer tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="openairinterface5g" class="md-nav__button md-logo" aria-label="openairinterface5g" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="openairinterface5g">
+
+    </a>
+    openairinterface5g
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/duranta-project/openairinterface5g" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FEATURE_SET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Feature set
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Supported_Hardware_Operating_System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Supported hardware and operating systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Key performance indicators
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GET_SOURCES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting the sources
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BUILD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building OAI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Packages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tuning_and_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tuning and security
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Roadmap
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Changelog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started with 5G
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Getting started with 5G
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_SA_Tutorial_OAI_CN5G/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI 5G core network
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_SA_Tutorial_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI gNB with a COTS UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_SA_Tutorial_OAI_nrUE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_SA_Tutorial_OAI_multi_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple OAI NR-UEs with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running OAI
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Running OAI
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RUNMODEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../runmodem-nrue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Running the UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MAC/mac-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB MAC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rrc-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RRC usage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gNB_frequency_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Setting the gNB frequency
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TESTING_OAI_NSA_COTS_UE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G NSA setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ntn-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTN setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handover-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Handover
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nr-dc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1-based NR-DC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RUN_NR_PRS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Positioning reference signal (PRS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair2/E2AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E2 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair2/E3AP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E3 agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nr-sidelink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sidelink
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Functional splits
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Functional splits
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../F1AP/F1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../E1AP/E1-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  E1 design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ORAN_FHI7.2_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ORAN_FHI7.2_ORU_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fronthaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Native 7.2x fronthaul library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nfapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAI-VNF and OAI-PNF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_NFAPI_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nFAPI internals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aerial_FAPI_Split_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NVIDIA Aerial and Foxconn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hardware acceleration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Hardware acceleration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LDPC_OFFLOAD_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC accelerators (AMD/Xilinx T2, Intel ACCs, ORS Aurora)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NR_SA_Tutorial_OAI_nrUE_GPU_offload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NR-UE with the GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair1/PHY/CODING/nrLDPC_coding/nrLDPC_coding_cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU LDPC decoder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair1/SIMULATION/TOOLS/DOC/gpu_acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GPU-accelerated channel simulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Simulators
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Simulators
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physical-simulators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair1/SIMULATION/TOOLS/DOC/channel_simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Channel simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UE_Positioning_in_DigitalTwin_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE positioning in a digital twin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../L2NFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Legacy
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Legacy
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../L2NFAPI_NOS1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator without S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../L2NFAPI_S1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L2 simulator with S1
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../L1SIM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G L1 simulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../d2d_emulator_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G device-to-device (D2D) emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Designs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Designs
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SW_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Software architecture
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SW-archi-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 flow graph in the gNB
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nr-ue-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L1 threads in the NR-UE
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../F1AP/F1AP-lib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  F1AP message library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTP/gtp-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GTP-U design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../XnAP/Xn-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Xn design
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NRPPA/NRPPA-call-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NRPPa call flow
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5Gnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE 5G NAS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beamforming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Beamforming
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rach_processing_in_gNB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gNB RACH processing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UL_MIMO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UL MIMO
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Container Images
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Container Images
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ci-scripts/yaml_files/5g_rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ci-scripts/yaml_files/4g_rfsimulator_fdd_05MHz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4G with the RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ci-scripts/yaml_files/sa_fhi_7.2_vvdn_gnb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 with a VVDN O-RU
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openshift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical simulators in OpenShift
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  General
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/T/DOC/T/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  T tracer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/config/DOC/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/LOG/DOC/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/DOC/loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared object loader
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/threadPool/thread-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Thread pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/actor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Actor utility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/ocp_itti/itti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inter-task interface (ITTI)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair1/PHY/CODING/DOC/LDPCImplementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LDPC implementation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../time_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Time management
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Radios
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Radios
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/rfsimulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RFsimulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/USRP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  USRP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/BLADERF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BladeRF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/iqplayer/DOC/iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q player
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iqrecordplayer_usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  I/Q record and replay
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/fhi_72/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  O-RAN 7.2 fronthaul driver (fhi_72)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/ETHERNET/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ethernet fronthaul drivers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/vrtsim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vrtsim
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/emulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RF emulator
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../radio/zmq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ZeroMQ (zmq)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Special-purpose libraries
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Special-purpose libraries
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair1/PHY/TOOLS/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scopes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/telnetsrv/DOC/telnethelp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Telnet server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common/utils/websrv/DOC/websrv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RT data recording app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Testing
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Testing
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UnitTests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Unit tests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TESTBenches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test benches
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ci-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CI framework
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Component tests (in tests/)
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Component tests (in tests/)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/nr-cuup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-UP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/nr-cu-nrppa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CU-NRPPa tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/nr-ue-nas-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UE NAS tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openair2/XNAP/tests/xn-simulator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  XNAP tester
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer tools
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Developer tools
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Repository agent guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution requirements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-style-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribution guidelines
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cross-compile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cross-compilation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clang-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  clang-format
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Formatting check
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/cppcheck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  cppcheck
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev_tools/sanitizers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sanitizers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/iwyu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  include-what-you-use (iwyu)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/docker-dev-env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Docker development environment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plotting tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev_tools/performance_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Performance monitoring
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc_best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation best practices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documentation website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        General
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-diagrams-of-ue-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sequence Diagrams of UE procedures
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence Diagrams of UE procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-connection-setupregistration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Initial connection setup/Registration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reestablishment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reestablishment
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdu-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PDU Session Management
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDU Session Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdu-session-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PDU Session Modification
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdu-session-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PDU Session Release
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qos-flows-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        QoS Flows Handling
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QoS Flows Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cu-cp-qos-flow-to-drb-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        CU-CP QoS-flow to DRB mapping
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sequence Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-du-handover-f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inter-DU Handover (F1)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-gnb-handover-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inter-gNB Handover (N2)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inter-gNB Handover (N2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        End-to-end flow
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-gnb-handover-xn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inter-gNB Handover (Xn)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inter-gNB Handover (Xn)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-flow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        End-to-end flow
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging-and-network-triggered-service-request-cm-idle-to-cm-connected" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Paging and Network Triggered Service Request (CM-IDLE to CM-CONNECTED)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paging and Network Triggered Service Request (CM-IDLE to CM-CONNECTED)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oai-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        OAI implementation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structures
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dus-and-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DUs and Cells
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DUs and Cells">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#du-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DU Management
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cell Management
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cell Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#du-and-cell-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DU and Cell Lifecycle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ue-cell-association-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UE Cell Association Management
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UE Cell Association Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handover-and-cell-association-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Handover and Cell Association Updates
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handover and Cell Association Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-handover-inter-du-same-cu-cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        F1 handover (inter-DU, same CU-CP)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n2-handover-inter-gnb-source-cu-vs-target-cu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        N2 handover (inter-gNB: source CU vs target CU)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xn-handover-inter-gnb-source-cu-vs-target-cu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Xn handover (inter-gNB: source CU vs target CU)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbour-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Neighbour cells
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Neighbour cells">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sib3sib4-and-measurement-gap-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SIB3/SIB4 and measurement-gap implementation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measgap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        MeasGap
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sib3sib4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SIB3/SIB4
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ue-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        UE Context
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UE Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cu-ups" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        CU-UPs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Transactions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Handover
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/duranta-project/openairinterface5g/edit/develop/doc/RRC/rrc-dev.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/duranta-project/openairinterface5g/raw/develop/doc/RRC/rrc-dev.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>Rrc dev</h1>
+
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
+<p>This document contains documentation for the 5G RRC layer, destined towards
+developers. It explains the basic working of the RRC, and various UE procedure
+schemes (connection, reestablishment, handover) including their interworking
+with other layers.</p>
+<p>User documentation, such as general configuration options, are described in <a href=".././rrc-usage/">a
+separate page</a>.</p>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<p>5G RRC is basically an ITTI message queue with associated handlers. It
+sequentially reads received ITTI messages and handles them through the function
+<code>rrc_gnb_task()</code> (constituing the thread entry point function). In this
+function, one can see three main groups of messages in a big switch statement:</p>
+<ul>
+<li>NGAP (messages starting with <code>NGAP_</code>)</li>
+<li>F1AP (messages starting with <code>F1AP_</code>)</li>
+<li>E1AP (messages starting with <code>E1AP_</code>)</li>
+<li>XnAP (messages starting with <code>XNAP_</code>)</li>
+</ul>
+<p>For each message, a corresponding handler is called. The messages are roughly
+named according to the 3GPP specification messages, so it should already be
+possible to find the message in the switch based on a message name in the spec.</p>
+<p>Note that RRC is inherently single-threaded, and processes messages in a FIFO
+order.</p>
+<h2 id="sequence-diagrams-of-ue-procedures">Sequence Diagrams of UE procedures<a class="headerlink" href="#sequence-diagrams-of-ue-procedures" title="Permanent link">&para;</a></h2>
+<p>The following section presents a number of common UE procedures for connection
+establishment&amp;control, bearer establishment, etc. The intention is to help
+developers find specific functions within RRC in the context of these
+procedures. For more information on message handlers at F1, E1 and Xn layers,
+please refer to the respective <a href="../../F1AP/F1-design/">F1 documentation</a>,
+<a href="../../E1AP/E1-design/">E1 documentation</a> and
+<a href="../../XnAP/Xn-design/">Xn documentation</a>.</p>
+<p>For more information on these procedures, please also refer to 3GPP TS 38.401
+(NG-RAN Architecture Description) and O-RAN.WG5.C.1-v11 (NR C-plane profile).</p>
+<p>A lot of the following diagrams would show an exchange between CU-CP, DU, and
+UE, in which the CU-CP forwards an "RRC Message" to the UE via an F1AP DL RRC
+Message Transfer through the DU, and correspondingly receives the "RRC Message
+Answer", as follows:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant du as DU
+  participant cucp as CU-CP
+  cucp-&gt;&gt;du: F1AP DL RRC Msg Transfer (RRC Message)
+  du-&gt;&gt;ue: RRC Message
+  ue-&gt;&gt;du: RRC Message Answer
+  du-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Message Answer)</code></pre>
+<p>To better utilize horizontal space, these exchanges have been collapsed as
+follows, but should be read as the above exchange:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant du as DU
+  participant cucp as CU-CP
+  cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Message)
+  ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Message Answer)</code></pre>
+<h3 id="initial-connection-setupregistration">Initial connection setup/Registration<a class="headerlink" href="#initial-connection-setupregistration" title="Permanent link">&para;</a></h3>
+<p>This sequence diagram shows the principal steps for an initial UE connection.
+This can either happen through a <em>Registration Request</em> (e.g., UE connects
+"from flight mode"), or a <em>Service Request</em> (i.e., UE connects after leaving
+coverage). Both requests are handled similarly by the gNB, and basically
+distinguish themselves, from the point of view of the gNB, by having PDU
+sessions in the NGAP Initial Context Setup Request present (Service Request) or
+not (Registration Request, with following PDU Session Resource Setup Request
+procedure).</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant du as DU
+  participant cucp as CU-CP
+  participant cuup as CU-UP
+  participant amf as AMF
+
+  ue-&gt;&gt;du: Msg1/Preamble
+  du-&gt;&gt;ue: Msg2/RAR
+  ue-&gt;&gt;cucp: F1AP Initial UL RRC Msg Tr (RRC Setup Req, in Msg3)
+  Note over cucp: rrc_handle_RRCSetupRequest()
+  cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Setup, in Msg4)
+  ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Setup Complete)
+  Note over cucp: rrc_handle_RRCSetupComplete()
+%% TODO: when is RRC connected?
+  cucp-&gt;&gt;amf: NGAP Initial UE Message (NAS Registration/Service Req)
+  Note over amf,ue: NAS Authentication Procedure (see 24.501)
+  Note over amf,ue: NAS Security Procedure (see 24.501)
+  amf-&gt;&gt;cucp: NGAP Initial Context Setup Req
+  Note over cucp: rrc_gNB_process_NGAP_INITIAL_CONTEXT_SETUP_REQ()
+  Note over cucp: rrc_gNB_generate_SecurityModeCommand()
+  cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Security Mode Command)
+  ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Security Mode Complete)
+  Note over cucp: rrc_gNB_decode_dcch() (inline)
+  opt No UE Capabilities present
+    Note over cucp: rrc_gNB_generate_UECapabilityEnquiry()
+    cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC UE Capability Enquiry)
+    ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC UE Capability Information)
+    Note over cucp: handle_ueCapabilityInformation()
+  end
+  opt PDU Sessions in NGAP Initial Context Setup Req present
+    Note over cucp: trigger_bearer_setup()
+    cucp-&gt;&gt;cuup: E1AP Bearer Context Setup Req
+    cuup-&gt;&gt;cucp: E1AP Bearer Context Setup Resp
+    Note over cucp: rrc_gNB_process_e1_bearer_context_setup_resp()
+    cucp-&gt;&gt;du: F1AP UE Context Setup Req
+    du-&gt;&gt;cucp: F1AP UE Context Setup Resp
+    Note over cucp: rrc_CU_process_ue_context_setup_response()
+    Note over cucp: e1_send_bearer_updates()
+    cucp-&gt;&gt;cuup: E1AP Bearer Context Modification Req
+    cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Reconfiguration)
+    cuup-&gt;&gt;cucp: E1AP Bearer Context Modification Resp
+    ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+    Note over cucp: handle_rrcReconfigurationComplete()
+  end
+  Note over cucp: rrc_gNB_send_NGAP_INITIAL_CONTEXT_SETUP_RESP()
+  cucp-&gt;&gt;amf: NGAP Initial Context Setup Resp (NAS Registration/Service Complete)</code></pre>
+<p>Note that if no PDU session is present in the NGAP Initial UE Context Setup
+Req, no F1AP UE Context Setup will be observed during this initial phase.</p>
+<p>If there is no PDU session set up during NGAP Initial Context Setup Req, the UE
+typically requests a PDU session(s) through a NAS procedure, which is basically
+the same code paths as the above optional PDU Session setup during an NGAP
+Initial Context Setup procedure:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant du as DU
+  participant cucp as CU-CP
+  participant cuup as CU-UP
+  participant amf as AMF
+
+  ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC UL Information Transfer)
+  cucp-&gt;&gt;amf: NGAP UL NAS Transport (NAS PDU Session Establishment Req)
+  amf-&gt;&gt;cucp: NGAP PDU Session Resource Setup Req (NAS PDU Session Establishment Accept)
+  Note over cucp: rrc_gNB_process_NGAP_PDUSESSION_SETUP_REQ()
+    Note over cucp: trigger_bearer_setup()
+    cucp-&gt;&gt;cuup: E1AP Bearer Context Setup Req
+    cuup-&gt;&gt;cucp: E1AP Bearer Context Setup Resp
+  Note over cucp: rrc_gNB_process_e1_bearer_context_setup_resp()
+  cucp-&gt;&gt;du: F1AP UE Context Setup Req
+  du-&gt;&gt;cucp: F1AP UE Context Setup Resp
+  Note over cucp: rrc_CU_process_ue_context_setup_response()
+    Note over cucp: e1_send_bearer_updates()
+    cucp-&gt;&gt;cuup: E1AP Bearer Context Modification Req
+  cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Reconfiguration + NAS PDU Session Establishment Accept)
+    cuup-&gt;&gt;cucp: E1AP Bearer Context Modification Resp
+  ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+  Note over cucp: handle_rrcReconfigurationComplete()
+  Note over cucp: rrc_gNB_send_NGAP_PDUSESSION_SETUP_RESP()
+  cucp-&gt;&gt;amf: NGAP PDU Session Resource Setup Resp</code></pre>
+<h3 id="reestablishment">Reestablishment<a class="headerlink" href="#reestablishment" title="Permanent link">&para;</a></h3>
+<p>The following sequence diagram shows the principal steps during a
+reestablishment request. When handling the RRC Reestablishment Request at the
+CU-CP, it notably checks if this UE is already known, if the UE is still at the
+same DU as it used to be previously (might change because of, or despite
+handover), and other validation checks. If all checks pass, the CU-CP continues
+with the reestablishment procedure; if any check fails, the CU-CP tries to
+release the old UE at the AMF, and continues with the "normal" connection setup
+(registration/service request) described above.</p>
+<p>The re-establishment flow implements transparent forwarding of CellGroupConfig
+per TS 38.473: the CU requests CellGroupConfig from the DU via UE Context
+Modification Request with <code>gNB_DU_Configuration_Query=true</code>, and the DU responds
+with an encoded CellGroupConfig that the CU forwards to the UE without
+decode/re-encode cycles.</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant du as DU
+  participant cucp as CU-CP
+  participant cuup as CU-UP
+  participant amf as AMF
+
+  ue-&gt;&gt;du: Msg1/Preamble
+  du-&gt;&gt;ue: Msg2/RAR
+  ue-&gt;&gt;du: Msg3 w/ RRC Reestablishment Request (old C-RNTI/PCI)
+  Note over du: DU creates UE context for new RNTI
+  du-&gt;&gt;cucp: F1AP Initial UL RRC Msg Tr (RRC Reestab Req, in Msg3)
+  Note over cucp: rrc_handle_RRCReestablishmentRequest()
+  alt UE known
+      opt PCI mismatch AND Association ID mismatch
+        Note over cucp: Detect different DU (assoc_id != du_assoc_id)&lt;br/&gt;Update du_assoc_id, set f1_ue_context_active=false
+      end
+      Note over cucp: rrc_gNB_generate_RRCReestablishment()&lt;br/&gt;SRB1 PDCP reestablishment
+      cucp-&gt;&gt;du: F1AP DL RRC Msg Tr (gNB-DU-UE ID)
+      Note over du: dl_rrc_message_transfer()
+        alt Old UE found
+          Note over du: Reuse configuration of and delete old UE
+        else Old UE not found
+          Note over du: do nothing
+        end
+      Note over du: Set reestablishRLC=true
+      Note over du: - Store CellGroup in reconfigCellGroup&lt;br/&gt;- Remove spCellConfig from CellGroup
+      du-&gt;&gt;ue: RRC Reestablishment
+      ue-&gt;&gt;du: RRC Reestablishment Complete
+      du-&gt;&gt;cucp: F1AP UL RRC Msg Tr (RRC Reestab Complete)
+      Note over cucp: handle_rrcReestablishmentComplete()
+      Note over cucp: rrc_gNB_process_RRCReestablishmentComplete()&lt;br/&gt;Re-establish SRB2 PDCP
+      Note over cucp: cuup_notify_reestablishment()&lt;br/&gt;Notify CU-UP for DRB re-establishment
+      cucp-&gt;&gt;cuup: E1AP Bearer Context Modification Req
+      cuup-&gt;&gt;cucp: E1AP Bearer Context Modification Resp (asynchronous)
+      alt on the original DU
+          Note over cucp: Send UE Context Modification Request&lt;br/&gt;with gNB_DU_Configuration_Query=true
+          cucp-&gt;&gt;du: F1AP UE Context Modification Req
+          du-&gt;&gt;cucp: F1AP UE Context Modification Resp&lt;br/&gt;(CellGroupConfig with spCellConfig and reestablishRLC flags)
+      else on a different DU
+          Note over cucp: Detect different DU (!f1_ue_context_active)&lt;br/&gt;Trigger UE Context Setup on new DU
+          cucp-&gt;&gt;du: F1AP UE Context Setup Request&lt;br/&gt;
+          du-&gt;&gt;cucp: F1AP UE Context Setup Response&lt;br/&gt;(CellGroupConfig with spCellConfig and reestablishRLC flags)
+      end
+      Note over cucp: rrc_CU_process_ue_context_setup/modification_response()&lt;br/&gt;Detect re-establishment via rrc_detect_reestablishment()&lt;br/&gt;rrc_gNB_generate_dedicatedRRCReconfiguration()&lt;br/&gt;(with is_reestablishment=true)
+      cucp-&gt;&gt;ue: F1AP DL RRC Msg Transfer (RRC Reconfiguration&lt;br/&gt;with transparent CellGroupConfig)
+      ue-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+      Note over cucp: handle_rrcReconfigurationComplete()
+  else Fallback*
+      cucp-&gt;&gt;amf: NGAP UE Context Release Request
+      Note over cucp: rrc_gNB_generate_RRCSetup()
+      Note over ue,amf: Continue with connection setup (registration/service request)
+  end</code></pre>
+<p>Note on re-establishment on different DU: The "UE known and on a different DU"
+case is shown in the sequence diagram above. When a UE re-establishes on a
+different DU than the original one (detected by comparing <code>du_assoc_id</code> at
+RRCReestablishmentRequest), the CU updates <code>du_assoc_id</code> and sets
+<code>f1_ue_context_active=false</code>. At RRCReestablishmentComplete, if
+<code>f1_ue_context_active</code> is false, the CU triggers UE Context Setup on the new
+DU per TS 38.401 §8.7.</p>
+<h3 id="pdu-session-management">PDU Session Management<a class="headerlink" href="#pdu-session-management" title="Permanent link">&para;</a></h3>
+<h4 id="pdu-session-modification">PDU Session Modification<a class="headerlink" href="#pdu-session-modification" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant UE
+    participant DU
+    participant CUCP as CU-CP
+    participant CUUP as CU-UP
+    participant AMF
+
+    AMF-&gt;&gt;CUCP: PDUSessionResourceModifyRequest
+    Note over CUCP: ngap_gNB_handle_pdusession_modify_request
+    CUCP-&gt;&gt;CUCP: decodePDUSessionResourceModify
+    CUCP-&gt;&gt;CUCP: NGAP_PDUSESSION_MODIFY_REQ
+    CUCP-&gt;&gt;CUCP: rrc_gNB_process_NGAP_PDUSESSION_MODIFY_REQ
+    opt UE not found or AMF_UE_ID mismatch
+        CUCP-&gt;&gt;AMF: NGAP_PDUSESSION_MODIFY_RESP (Failed PDU Session)
+        Note over CUCP: stop further processing
+    end
+
+    loop nb_pdusessions_tomodify
+        CUCP-&gt;&gt;CUCP: Update PDU session DRB/QoS configuration&lt;br/&gt;(add/modify/release)
+    end
+
+    alt !all_failed
+        Note over CUCP: Pre-RRC step: E1/F1 updates
+        Note over CUCP: Build E1AP DRB-To-Remove/To-Modify/To-Setup lists&lt;br/&gt;(populated during nr_rrc_update_pdusession)
+        CUCP-&gt;&gt;CUUP: E1 BEARER CONTEXT MOD REQUEST (DRB-To-Remove/To-Modify/To-Setup)
+        Note over CUUP: e1_bearer_context_modif()&lt;br/&gt;Process DRB modifications, removals, and setups&lt;br/&gt;Update PDCP/SDAP entities, GTP tunnels
+        CUUP-&gt;&gt;CUCP: E1 BEARER CONTEXT MOD RESPONSE
+        Note over CUCP: rrc_gNB_process_e1_bearer_context_modif_resp&lt;br/&gt;Save F1-U tunnel info for new DRBs&lt;br/&gt;Mark PDU sessions with new DRBs as PDU_SESSION_STATUS_NEW
+        Note over CUCP, DU: F1-U tunnel changes (new DRBs or DRB releases)
+        CUCP-&gt;&gt;DU: F1 UE Context Modification Request
+        Note over DU: handle_ue_context_drbs_setup/release
+        DU-&gt;&gt;CUCP: F1 UE Context Modification Response
+        Note over CUCP: rrc_CU_process_ue_context_modification_response
+        CUCP-&gt;&gt;CUCP: rrc_gNB_generate_dedicatedRRCReconfiguration
+
+        Note over CUCP: &lt;br/&gt;Attach DRB_ToReleaseList (if any)&lt;br/&gt;Set transaction ID to RRC_PDUSESSION_MODIFY
+        CUCP-&gt;&gt;DU: rrc_deliver_dl_rrc_message
+        DU-&gt;&gt;UE: RRCReconfiguration (DCCH)
+        UE-&gt;&gt;DU: RRCReconfigurationComplete
+        DU-&gt;&gt;CUCP: F1AP_UL_RRC_MESSAGE
+        Note over CUCP: rrc_gNB_decode_dcch
+        Note over CUCP: handle_rrcReconfigurationComplete&lt;br/&gt;Calls rrc_gNB_send_NGAP_PDUSESSION_MODIFY_RESP&lt;br/&gt;(DRBs already removed earlier in nr_rrc_update_pdusession)
+
+        CUCP-&gt;&gt;CUCP: rrc_gNB_send_NGAP_PDUSESSION_MODIFY_RESP
+        loop UE-&gt;pduSessions (matching transaction ID)
+            alt ESTABLISHED
+                Note over CUCP: Update status to ESTABLISHED&lt;br/&gt;Fill NGAP message (modified)&lt;br/&gt;Include QoS flow list
+            else PDU_SESSION_STATUS_FAILED
+                Note over CUCP: Fill NGAP message (failed to modify)&lt;br/&gt;Include cause
+            end
+        end
+        CUCP-&gt;&gt;AMF: NGAP_PDUSESSION_MODIFY_RESP
+    else msg-&gt;nb_of_pdusessions_failed &gt; 0
+        Note over CUCP: PDU Session failed to modify
+        CUCP-&gt;&gt;AMF: NGAP_PDUSESSION_MODIFY_RESP
+end</code></pre>
+<h4 id="pdu-session-release">PDU Session Release<a class="headerlink" href="#pdu-session-release" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant AMF
+    participant CUCP
+    participant CUUP
+    participant DU
+    participant UE
+    AMF-&gt;&gt;CUCP: NG PDU SESSION RESOURCE RELEASE COMMAND
+    Note over CUCP: ngap_gNB_handle_pdusession_release_command
+    CUCP-&gt;&gt;CUCP: rrc_gNB_process_NGAP_PDUSESSION_RELEASE_COMMAND
+    Note over CUCP: set status PDU_SESSION_STATUS_TORELEASE
+    CUCP-&gt;&gt;CUUP: E1 Bearer Context Modification Request
+    Note over CUUP: release_gtpu_tunnel (GTP tunnel, PDCP, SDAP)
+    CUUP-&gt;&gt;CUCP: E1 Bearer Context Modification Response
+    Note over CUCP: rrc_send_f1_ue_context_modification_request
+    CUCP-&gt;&gt;DU: F1 UE Context Modification Request
+    Note over DU: handle_ue_context_drbs_release (release in MAC/RLC)
+    DU-&gt;&gt;CUCP: F1 UE Context Modification Response
+    Note over CUCP: rrc_CU_process_ue_context_modification_response
+    Note over CUCP: replace existing CellGroupConfig
+    Note over CUCP: rrc_gNB_generate_dedicatedRRCReconfiguration
+    CUCP-&gt;&gt;UE: RRCReconfiguration (DRB release list, NAS PDU)
+    UE-&gt;&gt;CUCP: RRCReconfigurationComplete
+    Note over CUCP: handle_rrcReconfigurationComplete
+    Note over CUCP: rrc_gNB_send_NGAP_PDUSESSION_RELEASE_RESPONSE
+    CUCP-&gt;&gt;AMF: NG PDU SESSION RESOURCE RELEASE RESPONSE
+    Note over CUCP: rm_drbs_by_pdusession (from stored RRC list)
+    Note over CUCP: rm_pduSession (from stored RRC list)</code></pre>
+<h3 id="qos-flows-handling">QoS Flows Handling<a class="headerlink" href="#qos-flows-handling" title="Permanent link">&para;</a></h3>
+<p>This section describes the end-to-end handling of QoS flows in the OAI 5G SA implementation. QoS flows are
+the finest granularity of QoS differentiation in 5G systems. According to 3GPP specs, each PDU session can
+contain multiple QoS flows (maximum 64). Each QoS flow is mapped to exactly one Data Radio Bearer (DRB)
+within the gNB, but multiple QoS flows can be mapped to the same DRB. The mapping is determined by the
+CU-CP and configured in the CU-UP via E1AP, and in the UE via RRC signaling. Each PDU session is mapped
+to a SDAP entity and can contain multiple DRBs, each of which may carry multiple QoS flows.</p>
+<p>Key Standards:
+- 3GPP TS 23.501: 5G System Architecture (6.2.5, Quality of service)
+- 3GPP TS 37.324: SDAP Protocol (QoS flow to DRB mapping, 5.3)
+- 3GPP TS 38.463: E1AP (Bearer Context Management with QoS flows)
+- 3GPP TS 29.281: GTP-U (QFI marking)
+- 3GPP TS 38.331: RRC (Radio Bearer Configuration)</p>
+<p>Trigger: PDU Session Establishment or Modification from 5G Core (AMF/SMF)</p>
+<p>The PDU session setup flow in OAI begins when the gNB receives an NGAP PDU Session Resource Setup Request
+from the AMF, containing session parameters and QoS flow information. These flows are stored in the UE
+context and passed to the RRC layer, which maps each QoS flow to a DRB and prepares the E1AP Bearer
+Context Setup Request for the CU-UP. The CU-UP then creates the corresponding PDCP and SDAP bearers,
+establishes F1-U and N3 GTP-U tunnels, and returns a Bearer Context Setup Response. The GTP-U layer stores
+QFI-to-DRB mappings for tunnel management, while the SDAP layer maintains QFI-to-DRB tables for both
+uplink and downlink packet routing.</p>
+<p>During data transfer, uplink packets are demultiplexed using the QFI from the GTP-U header, and downlink
+packets are marked with their QFI before being sent to the UPF, ensuring consistent QoS-based traffic
+handling end-to-end.</p>
+<h4 id="cu-cp-qos-flow-to-drb-mapping">CU-CP QoS-flow to DRB mapping<a class="headerlink" href="#cu-cp-qos-flow-to-drb-mapping" title="Permanent link">&para;</a></h4>
+<p>The QoS-flow-to-DRB algorithm runs in the CU-CP (RRC) when flows are added or updated (for example
+<code>nr_rrc_add_bearers</code>, <code>nr_rrc_assign_drb_to_qos_flow</code>, and <code>nr_rrc_find_suitable_drb_for_qos</code> in
+<code>openair2/RRC/NR/rrc_gNB_radio_bearers.c</code>). E1AP does not implement this policy: Bearer Context
+Setup/Modification simply carries the resulting PDU sessions, DRB lists, and QoS flows per DRB that RRC
+already chose.</p>
+<p>The mapping is OAI-specific (3GPP defines that the gNB may map multiple QoS flows to one DRB but does
+not mandate these numeric caps).</p>
+<p>DRB assignment uses a QoS-aware multiplexing strategy from standardized 5QI where available:</p>
+<ul>
+<li>Dedicated DRBs (one QoS flow per DRB in practice for these classes):<ul>
+<li>Delay-critical GBR (5QI 82–90): each such flow triggers a new DRB, existing DRBs that already carry
+  DC-GBR are not reused for other flows.</li>
+<li>Other flows treated as isolated: 5QI 4, 6, 7, 8, 9, 10, 70, 80, and 71-73.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Multiplexed DRBs (when the new flow is not in the dedicated set, and reuse is allowed on a PDU session):<ul>
+<li>Non-delay-critical GBR flows: up to 2 QoS flows per DRB.</li>
+<li>Non-GBR flows: up to 5 QoS flows per DRB.</li>
+<li>Aggregate cap: at most 5 QoS flows per DRB in total (mixed GBR/non-GBR counts).</li>
+</ul>
+</li>
+</ul>
+<p>Per-DRB counting uses resource-type buckets (DC-GBR, GBR, non-GBR) derived from 3GPP TS 23.501
+table 5.7.4-1 (standardized 5QI).</p>
+<p>Dynamic 5QI without a numeric 5QI: OAI uses a conservative heuristic (packet delay budget, packet
+error rate, and QoS priority thresholds) to decide whether the flow must use a new dedicated DRB or
+may share an existing DRB. That path is independent of the static 5QI lists above.</p>
+<h4 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant UE
+    participant DU
+    participant CUCP as CU-CP
+    participant CUUP as CU-UP
+    participant AMF
+    participant UPF
+
+    AMF-&gt;&gt;CUCP: NGAP PDU Session Resource Setup Request
+    Note over CUCP: QoS flows, QoS profile (e.g. 5QI, ARP, GFBR/MFBR)&lt;br/&gt;and N3 UP tunnel info
+    Note over CUCP: ngap_gNB_handle_pdusession_setup_request&lt;br/&gt;ITTI to RRC
+    CUCP-&gt;&gt;CUCP: rrc_gNB_process_NGAP_PDUSESSION_SETUP_REQ
+    CUCP-&gt;&gt;CUCP: nr_rrc_add_bearers
+    Note over CUCP: QoS-flow-to-DRB mapping
+    CUCP-&gt;&gt;CUCP: trigger_bearer_setup
+    Note over CUCP: fill_e1_pdusession_to_setup / fill_e1_drb_to_setup&lt;br/&gt;per DRB (QoS flows, SDAP/PDCP)
+
+    Note over CUCP,CUUP: BEARER CONTEXT SETUP
+    CUCP-&gt;&gt;CUUP: E1AP Bearer Context Setup Request
+
+      Note over CUUP: e1_bearer_context_setup()
+      loop Per PDU session
+          loop Each DRB to setup
+              CUUP-&gt;&gt;CUUP: fill_e1_drb_setup
+              CUUP-&gt;&gt;CUUP: fill_e1_qos_flows_setup
+              Note over CUUP: Copy QFIs from E1 request into E1 setup response
+              Note over CUUP: f1_drb_gtpu_create&lt;br/&gt;gtpv1u_create_ngu_tunnel&lt;br/&gt;no QFI in F1-U GTP, one tunnel per DRB
+          end
+          CUUP-&gt;&gt;CUUP: e1_add_bearers
+          Note over CUUP: nr_sdap_addmod_entity, nr_pdcp_add_drb&lt;br/&gt;SDAP qfi2drb mapping
+          CUUP-&gt;&gt;CUUP: n3_gtpu_create
+          Note over CUUP: gtpv1u_create_ngu_tunnel&lt;br/&gt;newGtpuCreateTunnel&lt;br/&gt;one N3 tunnel per PDU session
+      end
+    CUUP-&gt;&gt;CUCP: E1AP Bearer Context Setup Response
+    Note over CUCP,CUUP: F1-U TEID/addr per DRB
+    Note over CUUP: N3 TEID (CU-UP) per PDU session
+
+    CUCP-&gt;&gt;CUCP: rrc_gNB_process_e1_bearer_context_setup_resp
+    alt First F1 UE context (!f1_ue_context_active)
+        CUCP-&gt;&gt;DU: F1 UE Context Setup Request
+        Note over CUCP: rrc_f1_ue_context_setup_from_e1_response
+    else F1 context already active
+        CUCP-&gt;&gt;DU: F1 UE Context Modification Request
+        Note over CUCP: rrc_send_f1_ue_context_modification_request
+    end
+    Note over DU: handle_ue_context_drbs_setup&lt;br/&gt;QoS from F1 flows -&gt; MAC logical channel config
+    DU-&gt;&gt;CUCP: F1 UE Context Setup or Modification Response
+
+    CUCP-&gt;&gt;CUCP: rrc_gNB_generate_dedicatedRRCReconfiguration
+    Note over CUCP: DRB-ToAddModList, SDAP-Config (QFI mapping)
+    CUCP-&gt;&gt;DU: rrc_deliver_dl_rrc_message / DL RRC Message Transfer
+    DU-&gt;&gt;UE: RRCReconfiguration (DCCH)
+
+    UE-&gt;&gt;DU: RRCReconfigurationComplete
+    DU-&gt;&gt;CUCP: UL RRC Message Transfer (F1AP)
+    Note over CUCP: rrc_gNB_decode_dcch, handle_rrcReconfigurationComplete
+
+    CUCP-&gt;&gt;AMF: NGAP PDU Session Resource Setup Response
+
+    Note over UPF,UE: ===== Data Plane Active ===== (N3/F1-U)
+
+    Note over UPF,UE: DOWNLINK (N3 -&gt; CU-UP)
+    UPF-&gt;&gt;CUUP: GTP-U with PDU Session Container (QFI)
+    Note over CUUP: Gtpv1uHandleGpdu&lt;br/&gt;parse ext hdr -&gt; QFI
+    Note over CUUP: sdap_data_req&lt;br/&gt;SDAP qfi2drb_table -&gt; DRB
+    Note over CUUP: nr_pdcp_data_req_drb
+    CUUP-&gt;&gt;DU: F1-U GTP-U (no PDU Session Container / QFI marking)
+    DU-&gt;&gt;UE: DRB
+
+    Note over UE,UPF: UPLINK (CU-UP -&gt; N3 UPF)
+    UE-&gt;&gt;DU: DRB
+    DU-&gt;&gt;CUUP: F1-U GTP-U (no QFI marking)
+    Note over CUUP: PDCP -&gt; SDAP UL RX
+    Note over CUUP: QFI from SDAP UL header if configured&lt;br/&gt;else gtpv1uSendDirect (no QFI in GTP ext hdr)
+    Note over CUUP: nr_sdap / gtpv1uSendDirectWithQFI&lt;br/&gt;bearer_id = PDU session id (N3 tunnel key)
+    CUUP-&gt;&gt;UPF: GTP-U PDU Session Container (UL PDU Session Info, QFI)</code></pre>
+<h3 id="inter-du-handover-f1">Inter-DU Handover (F1)<a class="headerlink" href="#inter-du-handover-f1" title="Permanent link">&para;</a></h3>
+<p>The basic handover (HO) structure is as follows. In order to support various
+handover "message passing implementation" (F1AP, NGAP, XnAP), RRC employs
+callbacks to signal HO Accept (<code>ho_req_ack()</code>), HO Success (<code>ho_success()</code>),
+and HO Cancel (<code>ho_cancel()</code>). These can be used to trigger the corresponding
+functionality based on mentioned "message passing implementation".</p>
+<p>The following sequence diagram shows the basic functional execution of a
+successful handover in the case of an F1 handover. Note the callbacks as
+mentioned above:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant sdu as source DU
+  participant tdu as target DU
+  participant cucp as CU-CP
+  participant cuup as CU-UP
+
+  Note over ue,sdu: UE active on source DU
+  alt HO triggered through A3 event
+    ue-&gt;&gt;sdu: RRC Measurement Report
+    sdu-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Measurement Report)
+    Note over cucp: Handover decision (A3 event trigger)
+  else Manual Trigger
+    Note over cucp: Handover decision (e.g., telnet)
+  end
+  Note over cucp: nr_rrc_trigger_f1_ho() ("on source CU")
+  Note over cucp: nr_initiate_handover() ("on target CU")
+  cucp-&gt;&gt;tdu: F1AP UE Context Setup Req
+  Note over tdu: Create UE context
+  tdu-&gt;&gt;cucp: F1AP UE Context Setup Resp (incl. CellGroupConfig)
+  Note over cucp: rrc_CU_process_ue_context_setup_response() ("on target CU")
+    Note over cucp: cuup_notify_reestablishment()
+    cucp-&gt;&gt;cuup: E1AP Bearer Context Modification Req
+  cucp--&gt;&gt;cucp: callback: ho_req_ack()
+  Note over cucp: nr_rrc_f1_ho_acknowledge() ("on source CU")
+  cucp-&gt;&gt;sdu: F1AP Context Modification Req (RRC Reconfiguration)
+    cuup-&gt;&gt;cucp: E1AP Bearer Context Modification Resp
+  sdu-&gt;&gt;ue: RRC Reconfiguration
+  sdu-&gt;&gt;cucp: F1AP Context Modification Resp
+  Note over sdu: Stop scheduling UE
+  Note over ue: Resync
+  Note over ue,tdu: RA (Msg1 + Msg2)
+  ue-&gt;&gt;tdu: RRC Reconfiguration Complete
+  tdu-&gt;&gt;cucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+  Note over cucp: handle_rrcReconfigurationComplete() ("on target CU")
+  cucp--&gt;&gt;cucp: callback: ho_success()
+  Note over cucp: nr_rrc_f1_ho_complete() ("on source CU")
+  cucp-&gt;&gt;sdu: F1AP UE Context Release Command
+  sdu-&gt;&gt;cucp: F1AP UE Context Release Complete
+  Note over ue,tdu: UE active on target DU</code></pre>
+<h3 id="inter-gnb-handover-n2">Inter-gNB Handover (N2)<a class="headerlink" href="#inter-gnb-handover-n2" title="Permanent link">&para;</a></h3>
+<p>This is an inter-NG-RAN procedure. The N2 handover specification is defined in the following documents:</p>
+<ul>
+<li>3GPP TS 23.502, 4.9.1.3 Inter NG-RAN node N2 based handover:<ul>
+<li>Outlines detailed handover signaling flows for N2-based handovers.</li>
+<li>Covers both intra-system (between 5G gNBs) and inter-system (between 5G and LTE eNBs) handovers.</li>
+</ul>
+</li>
+<li>3GPP TS 38.300, section 9 Mobility and State Transitions:<ul>
+<li>describes mobility procedures at the NG-RAN level, depending on the RRC state.</li>
+</ul>
+</li>
+<li>3GPP TS 38.413 (NGAP), section 8.4 UE Mobility Management Procedures:<ul>
+<li>Specifies the signaling procedures over the N2 interface.</li>
+<li>Includes messages like Handover Request, Handover Command, and Handover Preparation.</li>
+</ul>
+</li>
+<li>3GPP TS 38.331 (RRC): details the UE-level RRC procedures involved during handovers</li>
+</ul>
+<h4 id="end-to-end-flow">End-to-end flow<a class="headerlink" href="#end-to-end-flow" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant sdu as source DU
+  participant scucp as source CU-CP
+  participant scuup as source CU-UP
+  participant tdu as target DU
+  participant tcucp as target CU-CP
+  participant tcuup as target CU-UP
+  participant amf as AMF
+
+  Note over ue,sdu: UE active on source DU
+  alt HO triggered through A3 event
+    ue-&gt;&gt;sdu: RRC Measurement Report
+    sdu-&gt;&gt;scucp: F1AP UL RRC Msg Transfer (RRC Measurement Report)
+    Note over scucp: Handover decision (A3 event trigger)
+  else Manual Trigger
+    Note over scucp: Handover decision (e.g., telnet)
+  end
+  Note over scucp: nr_rrc_trigger_n2_ho() ("on source CU")
+  scucp-&gt;&gt;amf: HANDOVER REQUIRED
+  amf-&gt;&gt;tcucp: HANDOVER REQUEST
+  Note over tcucp: rrc_gNB_process_Handover_Request
+  Note over tcucp: trigger_bearer_setup
+  tcucp-&gt;&gt;tcuup: Bearer Context Setup Request
+  tcuup-&gt;&gt;tcucp: Bearer Context Setup Response
+  Note over tcucp: rrc_gNB_process_e1_bearer_context_setup_resp
+  Note over tcucp: nr_rrc_trigger_n2_ho_target() ("on target CU")
+  Note over tcucp: nr_initiate_handover()
+  tcucp-&gt;&gt;tdu: F1AP UE Context Setup Req
+  Note over tdu: Create UE context
+  tdu-&gt;&gt;tcucp: F1AP UE Context Setup Resp (incl. CellGroupConfig)
+  Note over tcucp: rrc_CU_process_ue_context_setup_response() ("on target CU")
+  Note over tcucp: e1_send_bearer_updates()
+  tcucp-&gt;&gt;tcuup: E1AP Bearer Context Modification Req
+  tcuup-&gt;&gt;tcucp: E1AP Bearer Context Modification Resp
+  tcucp--&gt;&gt;tcucp: callback: ho_req_ack()
+  Note over tcucp: nr_rrc_n2_ho_acknowledge() ("on target CU")
+  tcucp-&gt;&gt;amf: HANDOVER REQUEST ACKNOWLEDGE (data forwarding info)
+  amf-&gt;&gt;scucp: HANDOVER COMMAND
+  scucp-&gt;&gt;sdu: F1AP UE Context Modification Req (RRC Reconfiguration)
+  sdu-&gt;&gt;ue: RRC Reconfiguration
+  sdu-&gt;&gt;scucp: F1AP UE Context Modification Resp
+  Note over sdu: Stop scheduling UE
+  Note over scucp: rrc_CU_process_ue_context_modification_response()
+  Note over scucp: e1_send_bearer_updates()
+  scucp-&gt;&gt;scuup: E1 Bearer Context Modification Req (PDCP Status Request)
+  scuup-&gt;&gt;scucp: E1 Bearer Context Modification Resp (PDCP Status Info)
+  scucp-&gt;&gt;amf: NG Uplink RAN Status Transfer
+  amf-&gt;&gt;tcucp: NG Downlink RAN Status Transfer
+  tcucp-&gt;&gt;tcuup: E1 Bearer Context Modification Req (PDCP Status Info)
+  tcuup-&gt;&gt;tcucp: E1 Bearer Context Modification Resp
+  Note over ue: UE attachment to target DU
+  Note over ue,tdu: RA (Msg1 + Msg2)
+  ue-&gt;&gt;tdu: RRC Reconfiguration Complete
+  tdu-&gt;&gt;tcucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+  tcucp--&gt;&gt;tcucp: callback: ho_success()
+  Note over tcucp: nr_rrc_n2_ho_complete() ("on target CU")
+  Note over tcucp: handle_rrcReconfigurationComplete() ("on target CU")
+  tcucp-&gt;&gt;amf: HANDOVER NOTIFY
+  amf-&gt;&gt;scucp: UE Context Release Command
+  note over scucp: ngap_gNB_handle_ue_context_release_command
+  note over scucp: rrc_gNB_process_NGAP_UE_CONTEXT_RELEASE_COMMAND
+  scucp-&gt;&gt;scuup: E1 Bearer Context Release Command
+  scuup-&gt;&gt;scucp: E1 Bearer Context Release Complete
+  Note over scucp: rrc_gNB_generate_RRCRelease
+  scucp-&gt;&gt;sdu: F1 UE Context Release Command
+  sdu-&gt;&gt;scucp: F1 UE Context Release Complete
+  note over scucp: rrc_CU_process_ue_context_release_complete
+  note over scucp: rrc_remove_ue
+  Note over ue,tdu: UE active on target DU</code></pre>
+<h3 id="inter-gnb-handover-xn">Inter-gNB Handover (Xn)<a class="headerlink" href="#inter-gnb-handover-xn" title="Permanent link">&para;</a></h3>
+<p>This is an inter-NG-RAN procedure where the handover is prepared directly
+between the source and target gNBs over Xn, without the AMF. The AMF is only
+informed at the end through the NGAP Path Switch Request. The specifications
+are:</p>
+<ul>
+<li>3GPP TS 23.502, 4.9.1.2 Xn based inter NG-RAN handover</li>
+<li>3GPP TS 38.300, 9.2.3.2 Handover (intra-NR, Xn based)</li>
+<li>3GPP TS 38.423 (XnAP), 8.2 Basic Mobility Procedures</li>
+<li>3GPP TS 38.413 (NGAP), 8.4.4 Path Switch Request</li>
+</ul>
+<p>The XnAP task and the XnAP procedures are described in the
+<a href="../../XnAP/Xn-design/">Xn design</a> and
+<a href="../../XnAP/xnap_procedures/">Xn procedures</a> documents. RRC builds and
+processes the XnAP messages in <code>rrc_gNB_XNAP.c</code>, and exchanges them with
+<code>TASK_XNAP</code> as ITTI messages.</p>
+<p>RRC keeps the list of gNBs with which Xn Setup completed (<code>rrc-&gt;xn_candidates</code>,
+updated on <code>XNAP_SETUP_IND</code> / <code>XNAP_PEER_SHUTDOWN_IND</code>). On an A3 event
+towards a cell not served by this CU, if the <code>gNB_ID</code> of the neighbour is an
+Xn candidate, <code>nr_rrc_trigger_xn_ho()</code> is
+called; otherwise <code>nr_rrc_trigger_n2_ho()</code>. The telnet command
+<code>ci trigger_xn_ho</code> calls <code>nr_HO_Xn_trigger_telnet()</code>.</p>
+<h4 id="end-to-end-flow_1">End-to-end flow<a class="headerlink" href="#end-to-end-flow_1" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+  participant ue as UE
+  participant sdu as source DU
+  participant scucp as source CU-CP
+  participant scuup as source CU-UP
+  participant tdu as target DU
+  participant tcucp as target CU-CP
+  participant tcuup as target CU-UP
+  participant amf as AMF
+
+  Note over ue,sdu: UE active on source DU
+  alt HO triggered through A3 event
+    ue-&gt;&gt;sdu: RRC Measurement Report
+    sdu-&gt;&gt;scucp: F1AP UL RRC Msg Transfer (RRC Measurement Report)
+    Note over scucp: Handover decision (A3 event, target is Xn candidate)
+  else Manual Trigger
+    Note over scucp: Handover decision (telnet trigger_xn_ho)
+  end
+  Note over scucp: nr_rrc_trigger_xn_ho() ("on source CU")
+  Note over scucp: rrc_gNB_send_XNAP_HANDOVER_REQUEST()
+  scucp-&gt;&gt;tcucp: XnAP HANDOVER REQUEST
+  Note over tcucp: rrc_gNB_process_XNAP_HANDOVER_REQUEST()
+  Note over tcucp: create UE, KgNB* from source, trigger_bearer_setup()
+  tcucp-&gt;&gt;tcuup: Bearer Context Setup Request
+  tcuup-&gt;&gt;tcucp: Bearer Context Setup Response
+  Note over tcucp: rrc_gNB_process_e1_bearer_context_setup_resp
+  Note over tcucp: nr_rrc_trigger_xn_ho_target() ("on target CU")
+  Note over tcucp: nr_initiate_handover()
+  tcucp-&gt;&gt;tdu: F1AP UE Context Setup Req
+  Note over tdu: Create UE context
+  tdu-&gt;&gt;tcucp: F1AP UE Context Setup Resp (incl. CellGroupConfig)
+  Note over tcucp: rrc_CU_process_ue_context_setup_response() ("on target CU")
+  tcucp--&gt;&gt;tcucp: callback: ho_req_ack()
+  Note over tcucp: nr_rrc_xn_ho_acknowledge() ("on target CU")
+  tcucp-&gt;&gt;scucp: XnAP HANDOVER REQUEST ACKNOWLEDGE (HandoverCommand)
+  Note over scucp: rrc_gNB_process_XNAP_HANDOVER_REQ_ACK()
+  scucp-&gt;&gt;sdu: F1AP UE Context Modification Req (RRC Reconfiguration)
+  sdu-&gt;&gt;ue: RRC Reconfiguration
+  sdu-&gt;&gt;scucp: F1AP UE Context Modification Resp
+  Note over sdu: Stop scheduling UE
+  Note over scucp: rrc_CU_process_ue_context_modification_response()
+  scucp-&gt;&gt;scuup: E1 Bearer Context Modification Req (PDCP Status Request)
+  scuup-&gt;&gt;scucp: E1 Bearer Context Modification Resp (PDCP Status Info)
+  Note over scucp: ho_status_transfer(): rrc_gNB_send_XNAP_SN_STATUS_TRANSFER()
+  scucp-&gt;&gt;tcucp: XnAP SN STATUS TRANSFER
+  Note over tcucp: rrc_gNB_process_XNAP_SN_STATUS_TRANSFER()
+  tcucp-&gt;&gt;tcuup: E1 Bearer Context Modification Req (PDCP Status Info)
+  tcuup-&gt;&gt;tcucp: E1 Bearer Context Modification Resp
+  Note over ue: UE attachment to target DU
+  Note over ue,tdu: RA (Msg1 + Msg2)
+  ue-&gt;&gt;tdu: RRC Reconfiguration Complete
+  tdu-&gt;&gt;tcucp: F1AP UL RRC Msg Transfer (RRC Reconfiguration Complete)
+  tcucp--&gt;&gt;tcucp: callback: ho_success()
+  Note over tcucp: nr_rrc_xn_ho_path_switch() ("on target CU")
+  tcucp-&gt;&gt;amf: PATH SWITCH REQUEST
+  amf-&gt;&gt;tcucp: PATH SWITCH REQUEST ACKNOWLEDGE
+  Note over tcucp: store NH/NCC and N3 UL tunnel (RRC only)
+  Note over tcucp: rrc_gNB_send_XNAP_UE_CONTEXT_RELEASE()
+  tcucp-&gt;&gt;scucp: XnAP UE CONTEXT RELEASE
+  Note over scucp: rrc_gNB_process_XNAP_UE_CONTEXT_RELEASE()
+  par
+    scucp-&gt;&gt;scuup: E1 Bearer Context Release Command
+  and
+    scucp-&gt;&gt;sdu: F1 UE Context Release Command
+  end
+  sdu-&gt;&gt;scucp: F1 UE Context Release Complete
+  Note over scucp: rrc_CU_process_ue_context_release_complete
+  Note over scucp: NGAP UE context local release (no AMF signalling)
+  Note over scucp: rrc_remove_ue (if sdu is still the UE's DU)
+  Note over ue,tdu: UE active on target DU</code></pre>
+<p>The XnAP messages go through <code>TASK_XNAP</code> on each side, which is omitted above.</p>
+<h3 id="paging-and-network-triggered-service-request-cm-idle-to-cm-connected">Paging and Network Triggered Service Request (CM-IDLE to CM-CONNECTED)<a class="headerlink" href="#paging-and-network-triggered-service-request-cm-idle-to-cm-connected" title="Permanent link">&para;</a></h3>
+<p>The following flow documents the current OAI stack path for paging-triggered
+service resumption in SA: context release to idle, NGAP/F1AP/PCCH paging, then
+RRC setup with NAS Service Request.</p>
+<p>End-to-end flow is split across these 3GPP procedures:</p>
+<table>
+<thead>
+<tr>
+<th>Spec clause</th>
+<th>Procedure name</th>
+<th>Actor</th>
+<th>Spec role in this flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TS 23.502 §4.2.3.3</td>
+<td>Network Triggered Service Request</td>
+<td>AMF / 5GC</td>
+<td>Network must deliver MT signalling/data to a CM-IDLE UE. "The Paging Request triggers the UE Triggered Service Request procedure in the UE". Step 4b = Paging Request to RAN, step 6 = UE initiates §4.2.3.2</td>
+</tr>
+<tr>
+<td>TS 23.502 §4.2.3.2</td>
+<td>UE Triggered Service Request</td>
+<td>UE</td>
+<td>CM-IDLE UE may initiate SR "as a response to a network paging request"</td>
+</tr>
+<tr>
+<td>TS 24.501 §5.6.2.2</td>
+<td>Paging for 5GS services</td>
+<td>UE NAS</td>
+<td>On paging indication from lower layers: initiate service request (§5.6.1.2) when in <code>5GMM-REGISTERED</code> and <code>5GMM-IDLE</code></td>
+</tr>
+<tr>
+<td>TS 24.501 §8.2.16</td>
+<td>SERVICE REQUEST</td>
+<td>UE NAS</td>
+<td>NAS PDU sent by UE</td>
+</tr>
+</tbody>
+</table>
+<h4 id="oai-implementation">OAI implementation<a class="headerlink" href="#oai-implementation" title="Permanent link">&para;</a></h4>
+<p>In summary:
+- UE transitions to <code>RRC_IDLE</code> and AMF transitions UE to <code>CM-IDLE</code>
+- CN-triggered paging is performed with <code>5G-S-TMSI</code> (NGAP Paging -&gt; RRC Paging)
+- One radio page per cell per NGAP PAGING at UE PO
+- UE resumes via NAS Service Request and <code>RRCSetup</code>/<code>RRCSetupComplete</code>
+- AMF continues §4.2.3.3 after Initial UE Message / context setup</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant dn as DN
+  participant cn as 5GC
+  participant cu as gNB-CU
+  participant du as gNB-DU
+  participant ue as UE
+
+    cu-&gt;&gt;cn: NGAP UE Context Release Request
+    Note over cu: example trigger: telnet `rrc ctx_rel_req`
+    cu-&gt;&gt;cu: rrc_gNB_trigger_ue_context_release_req()
+    cu-&gt;&gt;cu: rrc_gNB_send_NGAP_UE_CONTEXT_RELEASE_REQ()
+    cn-&gt;&gt;cu: NGAP UE Context Release Command
+    cu-&gt;&gt;cu: rrc_gNB_process_NGAP_UE_CONTEXT_RELEASE_COMMAND()
+    cu-&gt;&gt;cu: rrc_gNB_generate_RRCRelease()
+    cu-&gt;&gt;du: F1AP DL RRC Message Transfer (RRCRelease)
+    du-&gt;&gt;ue: RRCRelease
+    ue-&gt;&gt;ue: handle_RRCRelease()
+    ue-&gt;&gt;ue: nr_rrc_going_to_IDLE()
+    Note over ue: RRC_IDLE, NAS remains REGISTERED and can request service
+    du-&gt;&gt;cu: F1AP UE Context Release Complete
+    cu-&gt;&gt;cn: NGAP UE Context Release Complete
+
+    Note over dn,ue: Trigger Paging
+    dn-&gt;&gt;cn: DL user data
+    Note over cn: AMF paging decision [23.502 §4.2.3.3]
+    cn-&gt;&gt;cu: NGAP Paging (5G-S-TMSI)
+    cu-&gt;&gt;cu: ngap_gNB_handle_paging()
+    cu-&gt;&gt;cu: decode_ng_paging()
+    cu-&gt;&gt;cu: rrc_gNB_process_PAGING_IND()
+    cu-&gt;&gt;cu: rrc_send_paging_to_dus()
+    cu-&gt;&gt;du: F1AP Paging
+    du-&gt;&gt;du: DU_handle_Paging()
+    du-&gt;&gt;du: f1_paging()
+    du-&gt;&gt;du: nr_mac_pcch_enqueue()
+    Note over du: at UE PO: schedule_nr_pcch()
+    du-&gt;&gt;du: do_NR_Paging()
+    du-&gt;&gt;ue: RRC Paging (ng-5G-S-TMSI, P-RNTI)
+
+    ue-&gt;&gt;ue: nr_rrc_ue_decode_pcch()
+    ue-&gt;&gt;ue: NAS_PAGING_IND
+    ue-&gt;&gt;ue: generateServiceRequest()
+    ue-&gt;&gt;ue: send_nas_initial_ul_transfer_req()
+    Note over ue: paging match triggers Service Request [24.501 §5.6.2]
+    Note over ue,cn: Resume service
+
+    ue-&gt;&gt;ue: NAS_INITIAL_UL_TRANSFER_REQ
+    ue-&gt;&gt;ue: nr_rrc_ue_prepare_RRCSetupRequest()
+    ue-&gt;&gt;ue: nr_rrc_trigger_mac_ra(NR_MAC_RA_START_SETUP)
+    ue-&gt;&gt;du: RRCSetupRequest
+    du-&gt;&gt;cu: F1AP Initial UL RRC Message Transfer (RRCSetupRequest)
+    cu-&gt;&gt;cu: rrc_handle_RRCSetupRequest()
+    cu-&gt;&gt;du: F1AP DL RRC Message Transfer (RRCSetup)
+    du-&gt;&gt;ue: RRCSetup
+    ue-&gt;&gt;ue: do_RRCSetupComplete()
+    Note over ue: uses dedicatedNAS when no SRB exists
+    ue-&gt;&gt;du: RRCSetupComplete + NAS SERVICE REQUEST
+    du-&gt;&gt;cu: F1AP UL RRC Message Transfer (RRCSetupComplete + NAS)
+    cu-&gt;&gt;cu: rrc_handle_RRCSetupComplete()
+    cu-&gt;&gt;cn: NGAP Initial UE Message
+    cn-&gt;&gt;cu: NGAP Initial Context Setup Request
+    cu-&gt;&gt;cu: rrc_gNB_process_NGAP_INITIAL_CONTEXT_SETUP_REQ()
+    cu-&gt;&gt;du: F1AP DL RRC Message Transfer (RRCReconfiguration)
+    du-&gt;&gt;ue: RRCReconfiguration
+    ue-&gt;&gt;du: RRCReconfigurationComplete
+    du-&gt;&gt;cu: F1AP UL RRC Message Transfer (RRCReconfigurationComplete)
+    cu-&gt;&gt;cu: handle_rrcReconfigurationComplete()
+    cu-&gt;&gt;cn: NGAP Initial Context Setup Response
+    cn-&gt;&gt;ue: DL user data</code></pre>
+<p>In OAI RFsim lab runs, a practical trigger sequence is:
+1. <code>rrc ctx_rel_req &lt;ue-id&gt;</code> at gNB telnet
+2. wait until AMF reports UE in IDLE state
+3. send host-side traffic to UE IP</p>
+<p>Relevant specs:
+- TS 23.502: §4.2.3.3 Network Triggered Service Request (AMF pages, step 4b),
+  UE Triggered Service Request §4.2.3.2 (by network paging)
+- TS 24.501 §5.6.2.2: Paging for 5G services
+- TS 24.501 §5.6.1: Service Request procedure
+- TS 38.331 §5.3.2: Paging
+- TS 38.331 §5.3.11: UE actions upon going to RRC_IDLE
+- TS 38.413 §8.5: Paging procedures (NGAP Paging)
+- TS 38.473 §8.7: Paging procedures (F1AP CU-to-DU paging)</p>
+<h2 id="structures">Structures<a class="headerlink" href="#structures" title="Permanent link">&para;</a></h2>
+<h3 id="dus-and-cells">DUs and Cells<a class="headerlink" href="#dus-and-cells" title="Permanent link">&para;</a></h3>
+<p>OAI 5G RRC is enabling support for multiple DUs, with each DU potentially
+serving multiple cells (though currently each DU is limited to one cell in practice).
+The architecture separates DU management from cell management to enable future
+multi-cell per DU capability.</p>
+<h4 id="du-management">DU Management<a class="headerlink" href="#du-management" title="Permanent link">&para;</a></h4>
+<p>DU-related data is stored in <code>nr_rrc_du_container_t</code>, and kept in a red-black
+tree indexed by the unique SCTP association ID (<code>assoc_id</code>). Each DU container stores:
+- DU identity and name
+- SCTP association ID for F1 interface communication
+- RRC version information
+- Sequential array of cell pointers (<code>cells</code>) - stores pointers to cells belonging to this DU (seq_arr_t)</p>
+<p>Key Functions:
+- <code>get_du_by_assoc_id()</code> - Lookup DU by SCTP association ID (O(log d) tree lookup)
+- <code>get_du_for_ue()</code> - Get DU associated with a specific UE
+- <code>find_target_du()</code> - Find a target DU for handover operations</p>
+<h4 id="cell-management">Cell Management<a class="headerlink" href="#cell-management" title="Permanent link">&para;</a></h4>
+<p>Cell-related data is stored in <code>nr_rrc_cell_container_t</code>. Cells are stored in two data structures:</p>
+<ol>
+<li>Global cell tree (<code>rrc-&gt;cells</code>): Red-black tree indexed by <code>cell_id</code>, containing all cells from all DUs. Used for efficient O(log N_CELL) lookups across all DUs. PCI reuse across the network is allowed and this is reflected in the tree.</li>
+<li>DU cell array (<code>du-&gt;cells</code>): Sequential array (seq_arr_t) of cell pointers, storing only cells belonging to that specific DU. Used for DU-specific operations. PCI must be unique within a DU.</li>
+</ol>
+<p>Each cell container stores:
+- Cell identity (NR Cell ID) and PCI (Physical Cell ID)
+- Link to serving DU via the unique <code>assoc_id</code>
+- Cell-specific information (PLMN, TAC, frequency, mode TDD/FDD)
+- MIB, SIB1, and MeasurementTimingConfiguration messages</p>
+<p>Key Functions:
+- <code>get_cell_by_cell_id()</code> - Lookup cell by NR Cell ID using global cell tree
+- <code>rrc_get_cell_for_du()</code> - Lookup cell by cell_id within a specific DU's cell array
+- <code>rrc_get_cell_by_pci_for_du()</code> - Lookup cell by PCI within DU's cells array
+- <code>rrc_add_cell_to_du()</code> - Add cell to DU's sequential array
+- <code>rrc_free_cell_container()</code> - Free cell container and associated ASN.1 structures</p>
+<p>Architecture Notes:
+- The <code>assoc_id</code> field (in cell and DUs containers) links cells to their serving DUs
+- When a DU connects via F1 Setup, cells are added to both the global tree and the DU's array
+- When a DU disconnects, cells are removed from both structures
+- Global tree enables efficient cross-DU cell lookups (O(log N_CELL))
+- DU array enables efficient per-DU cell iteration (O(k) where k=cells per DU)
+- Each DU maintains a sequential array of cell pointers</p>
+<h5 id="du-and-cell-lifecycle">DU and Cell Lifecycle<a class="headerlink" href="#du-and-cell-lifecycle" title="Permanent link">&para;</a></h5>
+<p>The following diagram shows the lifecycle of DUs and their associated cells, including the main F1AP messages and internal operations:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant CellTree as Cell Tree
+  participant DUTree as DU Tree
+  participant CU as CU-CP
+  participant DU as gNB-DU
+  participant UE as UE
+
+  Note over DU,CellTree: DU Connection &amp; Cell Registration
+  DU-&gt;&gt;CU: F1AP F1 Setup Request(DU ID, Cell Info, MIB/SIB1)
+  Note over CU: Validate: PLMN match with CU configuration
+  alt PLMN mismatch
+    CU-&gt;&gt;DU: F1AP F1 Setup Failure (PLMN not served)
+  end
+  Note over CU: Validate: DU ID uniqueness (RB_FOREACH gNB_DU_id in DU tree)
+  alt DU ID already exists
+    CU-&gt;&gt;DU: F1AP F1 Setup Failure (Unspecified)
+  end
+  Note over CU: Validate: Neighbour cell configuration (if configured)
+  alt Neighbour config invalid
+    CU-&gt;&gt;DU: F1AP F1 Setup Failure (Unspecified)
+  end
+  Note over CU: Extract MIB/SIB1 from system info (if present)
+  alt System info extraction fails
+    CU-&gt;&gt;DU: F1AP F1 Setup Failure (Semantic error)
+  end
+  alt All Validations Success
+    CU-&gt;&gt;CU: Create cell container (nr_rrc_cell_container_t), set assoc_id, copy cell info, set MIB/SIB1
+    CU-&gt;&gt;CellTree: rrc_add_cell(rrc, new) - RB_INSERT into global tree, increment rrc-&gt;num_cells
+    alt Duplicate cell_id (collision)
+      CU-&gt;&gt;DU: F1AP F1 Setup Failure (Cell not available)
+    else Cell added to tree
+      CU-&gt;&gt;CU: Create DU container (nr_rrc_du_container_t)
+      CU-&gt;&gt;CU: seq_arr_init(&amp;du-&gt;cells) - Initialize DU's cell array
+      CU-&gt;&gt;DUTree: rrc_add_du(rrc, du) - RB_INSERT(du), increment rrc-&gt;num_dus
+      CU-&gt;&gt;CU: rrc_add_cell_to_du(&amp;du-&gt;cells, new) - Add cell to DU's array
+      Note over CU,UE: Cell available for UE association
+      CU-&gt;&gt;CU: Encode CU SIBs (if configured)
+      CU-&gt;&gt;DU: F1AP F1 Setup Response(Cells to Activate, CU SIBs)
+      Note over CU,CellTree: DU and cell now active
+    end
+  end
+
+  UE-&gt;&gt;CU: RRC Setup Request
+  Note over CU: rrc_handle_RRCSetupRequest()
+  CU-&gt;&gt;CU: get_cell_by_cell_id(&amp;rrc-&gt;cells) - Use global tree
+  alt Cell not found
+    CU-&gt;&gt;UE: RRC Reject
+  end
+  Note over CU: UE Cell Association
+  CU-&gt;&gt;CU: rrc_add_ue_serving_cell(UE, cell, RRC_PCELL_INDEX)
+
+  Note over DU,CellTree: Optional: Cell Configuration Update
+  opt DU sends configuration update
+    DU-&gt;&gt;CU: F1AP DU Configuration Update(Add/Modify/Delete cells)
+    Note over CU: get_du_by_assoc_id(assoc_id)
+    loop For each cell to add
+      CU-&gt;&gt;CU: get_cell_by_cell_id(&amp;rrc-&gt;cells) - Check cell_id uniqueness globally
+      alt Duplicate cell_id found
+        Note over CU: Reject and return
+      end
+      CU-&gt;&gt;CU: rrc_get_cell_by_pci_for_du(&amp;du-&gt;cells) - Check PCI unique within DU
+      alt Duplicate PCI in DU
+        Note over CU: Reject and return
+      end
+    end
+    loop Cell Modification
+      CU-&gt;&gt;CU: get_cell_by_cell_id(cells, old_nr_cellid) - Find cell by old cell_id
+      CU-&gt;&gt;CU: update_cell_info(rrc, old_nci, new_ci) - Update in place
+      Note over CU: If cell_id changes: RB_REMOVE then re-insert after update
+      Note over CU: Free old MTC if new measurement timing config provided
+      Note over CU: If sys_info present: extract MIB/SIB1 and set on cell
+    end
+    CU-&gt;&gt;DU: F1AP DU Configuration Update Acknowledge
+  end
+
+  Note over DU,CellTree: DU Disconnection &amp; Cell Cleanup
+  DU--&gt;&gt;CU: F1AP Lost Connection(SCTP connection lost)
+  Note over CU: rrc_CU_process_f1_lost_connection()
+  CU-&gt;&gt;DUTree: RB_FIND(du) - Find DU by assoc_id using temporary struct
+  alt DU not found
+    Note over CU: Log warning and return
+  end
+  Note over CU: rrc_cleanup_du() then invalidate_du_connections()
+  CU-&gt;&gt;CU: Iterate cells in DU's array (last to first)
+  loop For each cell in DU's array
+    CU-&gt;&gt;CU: seq_arr_erase(&amp;du-&gt;cells, cell_ptr) - Remove from DU's array
+    CU-&gt;&gt;CellTree: rrc_rm_cell(): RB_REMOVE(cell), decrement num_cells, rrc_free_cell_container()
+  end
+  CU-&gt;&gt;DUTree: rrc_rm_du(): RB_REMOVE(du) - Remove DU from tree
+  CU-&gt;&gt;CU: Decrement rrc-&gt;num_dus counter
+  CU-&gt;&gt;CU: seq_arr_free(&amp;du-&gt;cells) - Free DU's cell array
+  CU-&gt;&gt;CU: rrc_free_du_container() - Free DU container
+  Note over CU: invalidate_du_connections()
+  loop For each UE:
+    CU-&gt;&gt;CU: rrc_remove_ue_scells_from_du() - Remove SCells from disconnected DU
+    alt UE belongs to disconnected DU
+      CU-&gt;&gt;CU: Set du_assoc_id = 0 (mark DU offline)
+      CU-&gt;&gt;CU: Trigger NGAP UE Context Release Request
+    end
+  end
+  Note over CU,CellTree: DU and all cells removed</code></pre>
+<p>Key Functions:
+- <code>rrc_gNB_process_f1_setup_req()</code> - Handles F1 Setup Request, creates DU and cell containers.
+  Validates PLMN match, DU ID uniqueness, and cell_id/PCI uniqueness before creating containers.
+- <code>rrc_gNB_process_f1_du_configuration_update()</code> - Handles cell configuration updates.
+  Currently supports cell modification (MIB/SIB1 updates) and validates cell additions, but cell addition
+  and deletion are not yet fully implemented.
+- <code>rrc_CU_process_f1_lost_connection()</code> - Handles DU disconnection. Calls <code>rrc_cleanup_du()</code> to
+  remove all cells and the DU from their trees and free resources, then
+  <code>invalidate_du_connections()</code> to clean up UE associations (e.g. trigger NGAP UE Context Release Request for UEs on that DU).</p>
+<h4 id="ue-cell-association-management">UE Cell Association Management<a class="headerlink" href="#ue-cell-association-management" title="Permanent link">&para;</a></h4>
+<p>The RRC maintains a per-UE association with serving cells, tracking which cells
+a UE is currently using. This replaces the previous single-cell assumption and
+enables proper multi-cell support where each UE can have multiple serving cells
+(one PCell and up to 31 SCells). The servCellIndex (TS 38.331) is tracked per-UE
+in the <code>ue_serving_cell_t</code> structure in the UE context (the same cell can have
+different servCellIndex values for different UEs).</p>
+<p>Data Structures:
+- <code>ue_serving_cell_t</code>: Stores serving cell information (nci, servCellIndex, assoc_id)
+- <code>gNB_RRC_UE_t.serving_cells</code>: Dynamic array (seq_arr_t) of serving cell entries. PCell is always at index 0.</p>
+<p>Key Functions:
+- <code>rrc_add_ue_serving_cell()</code> - Adds a new serving cell to UE's serving_cells array.
+- <code>rrc_get_ue_serving_cell_by_id()</code> - Retrieves serving cell entry by servCellIndex.
+- <code>ue_get_pcell_entry()</code> - Returns the PCell serving cell entry (first element in serving_cells).
+- <code>rrc_remove_ue_scells_from_du()</code> - Removes all serving cells belonging to a specific DU via assoc_id (e.g. during handover or DU disconnection).</p>
+<h5 id="handover-and-cell-association-updates">Handover and Cell Association Updates<a class="headerlink" href="#handover-and-cell-association-updates" title="Permanent link">&para;</a></h5>
+<p>During handover, the UE's serving cell list is updated so the PCell reflects the target cell and source-DU cells are removed.</p>
+<h6 id="f1-handover-inter-du-same-cu-cp">F1 handover (inter-DU, same CU-CP)<a class="headerlink" href="#f1-handover-inter-du-same-cu-cp" title="Permanent link">&para;</a></h6>
+<p>Cell association is updated when the <strong>source</strong> DU sends F1AP UE Context Modification Response (after it has sent the RRC Reconfiguration to the UE). The CU-CP is a single RRC instance; both source DU and target DU are under the same CU.</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant SourceDU as Source DU
+  participant CU as CU-CP
+
+  Note over CU,CU: F1 handover: cell association update on Context Modification Response
+  SourceDU-&gt;&gt;CU: F1AP UE Context Modification Response
+  Note over CU: rrc_CU_process_ue_context_modification_response()
+  Note over CU: Check: ho_context &amp;&amp; source &amp;&amp; target (F1 HO)
+
+  alt F1 handover in progress
+    CU-&gt;&gt;CU: nr_rrc_apply_target_context(UE)
+    Note over CU: F1 UE data: du_assoc_id = target DU, secondary_ue = target DU UE ID, RNTI = target RNTI
+    CU-&gt;&gt;CU: nr_rrc_update_cell_assoc_after_ho(rrc, UE)
+    Note over CU: F1 branch (ho_context-&gt;source present):
+    CU-&gt;&gt;CU: rrc_remove_ue_scells_from_du(UE, source_ctx-&gt;cell-&gt;assoc_id)
+    Note over CU: Remove all serving cells (incl. PCell) belonging to source DU
+    CU-&gt;&gt;CU: rrc_add_ue_serving_cell(UE, target_ctx-&gt;cell, RRC_PCELL_INDEX)
+    Note over CU: Handover complete: PCell = target cell, source DU cells removed
+  end</code></pre>
+<h6 id="n2-handover-inter-gnb-source-cu-vs-target-cu">N2 handover (inter-gNB: source CU vs target CU)<a class="headerlink" href="#n2-handover-inter-gnb-source-cu-vs-target-cu" title="Permanent link">&para;</a></h6>
+<p>Cell association is updated only on the target CU-CP, when the target DU sends F1AP UE Context Setup Response. The UE context was created for handover, so there is no existing serving cell to remove. The flow is triggered inside the handover request acknowledge callback.</p>
+<ul>
+<li>Target CU-CP: Receives HANDOVER REQUEST, sets up bearer and F1 UE context on target DU; when the target DU sends F1AP UE Context Setup Response, the target CU runs the cell-association update and then sends HANDOVER REQUEST ACKNOWLEDGE.</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+  participant TargetDU as Target DU
+  participant TargetCU as Target CU-CP
+
+  Note over TargetCU: N2 handover: cell association update
+  Note over TargetCU: F1AP UE Context Setup Resp from target DU (in nr_rrc_n2_ho_acknowledge)
+  TargetDU-&gt;&gt;TargetCU: F1AP UE Context Setup Response
+  Note over TargetCU: rrc_CU_process_ue_context_setup_response() then callback ho_req_ack()
+  Note over TargetCU: nr_rrc_n2_ho_acknowledge(rrc, UE)
+
+  TargetCU-&gt;&gt;TargetCU: nr_rrc_apply_target_context(UE)
+  Note over TargetCU: F1 UE data: du_assoc_id = target DU, secondary_ue = target DU UE ID, RNTI = target RNTI
+  TargetCU-&gt;&gt;TargetCU: nr_rrc_update_cell_assoc_after_ho(rrc, UE)
+  Note over TargetCU: N2 branch (ho_context-&gt;source NULL): no SCells to remove
+  TargetCU-&gt;&gt;TargetCU: rrc_add_ue_serving_cell(UE, target_ctx-&gt;cell, RRC_PCELL_INDEX)
+  Note over TargetCU: Then: encode Handover Command, send NGAP HANDOVER REQUEST ACKNOWLEDGE</code></pre>
+<h6 id="xn-handover-inter-gnb-source-cu-vs-target-cu">Xn handover (inter-gNB: source CU vs target CU)<a class="headerlink" href="#xn-handover-inter-gnb-source-cu-vs-target-cu" title="Permanent link">&para;</a></h6>
+<p>Same as N2 handover on the target CU-CP: the cell association is updated in
+the handover request acknowledge callback <code>nr_rrc_xn_ho_acknowledge()</code>, by
+<code>nr_rrc_apply_target_context()</code> and <code>nr_rrc_update_cell_assoc_after_ho()</code>,
+before the Handover Command is encoded and the XnAP HANDOVER REQUEST
+ACKNOWLEDGE is sent. On the source CU-CP, the cell association is not updated:
+the UE is removed after the XnAP UE CONTEXT RELEASE.</p>
+<h3 id="neighbour-cells">Neighbour cells<a class="headerlink" href="#neighbour-cells" title="Permanent link">&para;</a></h3>
+<h4 id="sib3sib4-and-measurement-gap-implementation">SIB3/SIB4 and measurement-gap implementation<a class="headerlink" href="#sib3sib4-and-measurement-gap-implementation" title="Permanent link">&para;</a></h4>
+<p>The following section documents the implementation-level control flow
+for SIB3/SIB4 and measurement-gap handling in current OAI, using the configured
+neighbor cell list as a shared input model.</p>
+<p>Briefly, the three procedures are:
+- SIB3: CU derives and provides intra-frequency neighbour SI, which DU broadcasts
+  and UE uses for autonomous idle/inactive intra-frequency reselection.
+- SIB4: CU derives and provides inter-frequency carrier/neighbour SI, which DU
+  broadcasts and UE uses for autonomous idle/inactive inter-frequency reselection.
+- MeasGap: CU/DU coordinate dedicated <code>MeasGapConfig</code> in UE <code>MeasConfig</code>, DU
+  scheduler interrupts transmission (<code>nr_measgap_scheduling()</code>) for the UE to
+  apply the MeasGap configuration in connected mode for gap-based measurements that
+  are sent as <code>MeasurementReport</code> and processed at CU-CP (<code>rrc_gNB_process_MeasurementReport()</code>).
+  Event-driven reports (for example A3) are used by CU-side mobility logic and can
+  trigger handover procedures.</p>
+<h3 id="measgap">MeasGap<a class="headerlink" href="#measgap" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+  participant DM as Data model (neighbour_cell_configuration)
+  participant CU as CU-CP (RRC)
+  participant DU as DU (MAC/RRC)
+  participant UE as UE
+
+  CU--&gt;&gt;DM: Read serving + neighbour frequency/PCI/band data
+  DM--&gt;&gt;CU: Provide neighbour/frequency inputs for MeasConfig
+  CU-&gt;&gt;CU: nr_rrc_get_measconfig
+  Note over CU: Build UE MeasConfig
+  CU-&gt;&gt;CU: get_meas_timing_config (cell.mtc, ue.measConfig)
+  Note over CU: Check distinct ssbFrequency
+  alt one frequency only
+    Note over CU: returns NULL, no meas_timing_config sent to DU
+  else multiple frequencies
+    CU-&gt;&gt;DU: F1AP UE Context Setup Request
+    Note over CU,DU: Includes cu_to_du_rrc_info.meas_timing_config
+    DU-&gt;&gt;DU: create_measgap_config
+    DU-&gt;&gt;DU: encode_measgap_config
+    DU--&gt;&gt;CU: F1AP UE Context Setup Response
+    Note over DU,CU: Includes du_to_cu_rrc_info.meas_gap_config
+    CU-&gt;&gt;CU: get_meas_gap_config
+    Note over CU: Decode/store gap in UE MeasConfig (UE.measConfig.measGapConfig)
+    CU-&gt;&gt;UE: RRCReconfiguration
+    Note over CU,UE: Includes MeasConfig.measGapConfig
+    rect rgba(210, 235, 255, 0.35)
+      Note over DU,UE: Measurement-gap window
+      DU-&gt;&gt;DU: nr_measgap_scheduling
+      Note over DU: Interrupt transmission for meas gap
+      UE-&gt;&gt;UE: nr_rrc_handle_meas_indication
+      Note over UE: Perform gap-based neighbour/inter-frequency measurements
+      UE--&gt;&gt;CU: MeasurementReport
+    end
+    Note over UE,CU: UL-DCCH MeasurementReport for configured events (e.g. A3)
+    CU-&gt;&gt;CU: rrc_gNB_process_MeasurementReport
+    Note over CU: Run mobility decision logic (may trigger handover)
+  end</code></pre>
+<h3 id="sib3sib4">SIB3/SIB4<a class="headerlink" href="#sib3sib4" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+  participant DM as Data model (neighbour_cell_configuration)
+  participant CU as CU-CP (RRC)
+  participant DU as DU
+  participant UE as UE
+
+  CU-&gt;&gt;CU: cp_f1_served_cell_info_to_cell
+  CU-&gt;&gt;DM: get_cell_neighbour_list
+  DM--&gt;&gt;CU: neighbour_cell_configuration for serving cell
+  CU-&gt;&gt;CU: get_ssb_arfcn
+  Note over CU: Derive serving_ssb_arfcn from cell MTC
+  loop for each configured neighbour
+    Note over CU: Compare neighbour.absoluteFrequencySSB vs serving_ssb_arfcn
+    alt equal
+      CU-&gt;&gt;CU: get_sib3_intra_freq_neighbors
+    else different
+      CU-&gt;&gt;CU: get_sib4_inter_freq_neighbors
+    end
+  end
+  CU--&gt;&gt;DU: F1AP F1 Setup Response
+  DU--&gt;&gt;UE: BCCH-DL-SCH-Message
+  Note over DU,UE: Broadcast SystemInformation including configured SIB3/SIB4
+  UE-&gt;&gt;UE: nr_rrc_ue_decode_NR_BCCH_DL_SCH_Message
+  Note over UE: Evaluate idle/inactive reselection criteria and timers
+  Note over UE,DU: After reselection, access/registration continues on selected cell DU as needed</code></pre>
+<h2 id="ue-context">UE Context<a class="headerlink" href="#ue-context" title="Permanent link">&para;</a></h2>
+<p>UE context information is stored in <code>gNB_RRC_UE_t</code>, which includes:
+- Serving cells tracking: Dynamic array of serving cells (PCell + SCells)
+- Security context: Keys, algorithms, and security state
+- Radio bearers: SRB and DRB configurations
+- PDU sessions: Active PDU session information
+- Handover context: Temporary data during handover procedures</p>
+<h3 id="cu-ups">CU-UPs<a class="headerlink" href="#cu-ups" title="Permanent link">&para;</a></h3>
+<p>CU-UP information is stored in <code>nr_rrc_cuup_container_t</code>, and kept in a tree
+indexed by the SCTP association ID.</p>
+<h3 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h3>
+<p>The RRC keeps track of ongoing transaction (RRC procedures) through a per-UE
+array <code>xids</code>, which is indexed with a transaction ID <code>xid</code> in <code>[0,3]</code> to keep
+track of ongoing transactions. Upon RRC Reconfiguration Complete, these IDs are
+deleted.</p>
+<p>Note that while 38.331 requires only one RRC transaction to happen at a time,
+the 5G RRC does not actually ensure this; it only tries to prevent it by
+chaining of transactions and some checks. For instance, the Security Mode
+procedure is followed by a UE capability procedure, and some procedures are not
+executed if others are ongoing (ex.: handover if there is reconfiguration).
+However, it might be possible to trigger a procedure while another is ongoing.</p>
+<p>As of now, no queueing mechanims exists to ensure only one operation is
+ongoing, which would likely also simplify the code.</p>
+<h3 id="handover">Handover<a class="headerlink" href="#handover" title="Permanent link">&para;</a></h3>
+<p>Handover-related data is stored in a per-UE structure of type
+<code>nr_handover_context_t</code>. It is a pointer and only set during handover
+operation. This data structure has in turn two pointers, one to the source CU
+(<code>nr_ho_source_cu_t</code>), and one to the target CU (<code>nr_ho_target_cu_t</code>). In F1,
+both are present. In N2 and Xn, only one pointer is supposed to be set at the
+corresponding CU.</p>
+<ul>
+<li><code>nr_ho_source_cu_t</code> contains notably a function pointer <code>ho_cancel</code> for
+handover cancel (N2 and Xn).</li>
+<li><code>nr_ho_target_cu_t</code> contains function pointers <code>ho_req_ack</code>
+for handover request acknowledge, <code>ho_success</code> for handover success,
+<code>ho_failure</code> for handover failure (N2 and Xn), and <code>ho_trigger</code> (N2 and
+Xn), called on the E1 Bearer Context Setup Response to set up the UE on the
+target DU.</li>
+<li><code>nr_ho_source_cu_t</code> also contains <code>ho_status_transfer</code>, called when the
+source CU-UP returns the PDCP status: NGAP Uplink RAN Status Transfer for N2,
+XnAP SN Status Transfer for Xn.</li>
+</ul>
+<p>As can be seen in the sequence diagrams above, either the "target CU" or
+"source CU" needs to do an operation, and a "switch" from target to source CU
+is done using these function pointers. 
+- For instance, in F1, the handover request acknowledge
+function pointers merely calls another (RRC) function which triggers a
+reconfiguration. 
+- In the case of N2, the handover request acknowledge function
+pointer should trigger the NGAP Handover Request Acknowledge, and the handover
+success function pointer should trigger the NGAP Handover Notify message.
+- In the case of Xn, the handover request acknowledge function pointer
+(<code>nr_rrc_xn_ho_acknowledge()</code>) sends the XnAP Handover Request Acknowledge,
+the handover success function pointer (<code>nr_rrc_xn_ho_path_switch()</code>) sends
+the NGAP Path Switch Request, and the handover failure function pointer
+(<code>nr_rrc_xn_ho_failure()</code>) sends the XnAP Handover Preparation Failure.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!-- SPDX-License-Identifier: MIT -->
+
+<div class="md-copyright duranta-footer">
+  <a href="https://github.com/duranta-project" target="_blank" rel="noopener" class="duranta-footer__logo">
+    <img src="https://raw.githubusercontent.com/duranta-project/governance/main/logos/Duranta-Logo-White.png" alt="Duranta">
+  </a>
+  <div class="md-copyright__highlight">
+    <div>&copy; 2026 Duranta Project &middot; openairinterface5g</div>
+    <div>
+      Documentation licensed under
+      <a href="https://github.com/duranta-project/openairinterface5g/blob/develop/LICENSES/preferred/CC-BY-4.0.txt" target="_blank" rel="noopener">CC BY 4.0</a>
+    </div>
+    <div>
+      For any bugs or problems, please
+      <a href="https://github.com/duranta-project/openairinterface5g/issues" target="_blank" rel="noopener">open an issue on GitHub</a>.
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.expand","navigation.instant","navigation.instant.progress","navigation.tracking","navigation.top","navigation.footer","toc.follow","search.suggest","search.highlight","content.code.copy","content.action.edit","content.action.view"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>
